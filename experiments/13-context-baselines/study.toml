@@ -1,0 +1,41 @@
+[study]
+name = "13-context-baselines"
+question = "Do the zero-shot models still lose to the best baseline when the baselines are fitted only on the models' 512-bar context?"
+
+[plan]
+# exploratory, planned and locked on 2026-11-18 (owner's approval) after rq1's test results
+# were seen; it never changes rq1's answer
+locked = true
+
+[data]
+tier = 1
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "test"
+
+[models]
+# rq1's main family and the five baselines (four of them refitted on the context here)
+names = ["random-walk", "climatology", "ewma-normal", "garch-normal", "linear", "chronos-bolt-small", "chronos-bolt-base", "chronos-2", "timesfm-2.5", "tirex-1.1", "moirai-2-small", "kronos-small", "kronos-base"]
+
+[seeds]
+# the cache pools Kronos's seeds 0-2 (as rq1); nothing here draws with them
+values = [0, 1, 2]
+
+[compute]
+device = "cpu"
+estimated_hours = 0.5
+estimated_cost_usd = 0.0
+
+[options]
+# the run id of 02-forecasts whose cache this study reads; the rule of rq1 is read from
+# 03-rq1-null's study.toml
+forecast_cache = "test-2026-11-17"
+# own bars in each baseline fit: the zero-shot models' lookback (02-forecasts `lookback`)
+window = 512
+# the ridge regression's lags and penalty (02-forecasts `linear_lags`, `linear_ridge`)
+lags = [1, 2, 4, 8, 24]
+ridge = 1.0
+# processes of the daily GARCH(1,1) fits
+workers = 24

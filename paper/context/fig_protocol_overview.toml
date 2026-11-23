@@ -1,0 +1,104 @@
+# Text of Figure 1 of the benchmark paper (the protocol overview).
+#
+# Every word printed in the figure is in this file. Change the text here and redraw the figure
+# from the lab root:
+#
+#     .venv/bin/python paper/scripts/make_protocol_overview.py
+#
+# Rules for the text:
+# - ASCII only. Write "--" for an en dash (Diebold--Mariano, d1--d4), as in LaTeX.
+# - Every fact must match paper/sections/protocol.tex.
+# - Bullets wrap inside their card by themselves. If any text does not fit (a card grows past
+#   the figure, two texts overlap, a word is wider than its card), the script stops and names
+#   the text; then shorten the text or raise `height` below.
+
+[figure]
+# Height of the figure in inches. The width is fixed at 6.80 in (an AAAI figure*).
+height = 2.35
+
+# ---------------------------------------------------------------------------------------------
+# Top row: the steps of the protocol, drawn left to right as numbered cards joined by arrows.
+# Add or remove a [[stages]] block to add or remove a card (at most four cards fit).
+#   title     - bold name of the step, one line
+#   questions - research questions this step answers, drawn as tags above the card ([] = none)
+#   bullets   - one entry per bullet point; a long bullet wraps onto the next line
+# ---------------------------------------------------------------------------------------------
+
+[[stages]]
+title = "Data: 72 assets"
+questions = []
+bullets = [
+    "Crypto 8, FX 16",
+    "Commodities 8, indices 8",
+    "Stocks: 16 US, 16 non-US",
+    "Binance, Dukascopy, Alpaca",
+]
+
+[[stages]]
+title = "Zero-shot forecasts"
+questions = []
+bullets = [
+    "10 TSFMs, 13 checkpoints",
+    "Input: 512 observed bars",
+    "Output: deciles",
+    "Horizons: 1, 4, 24 bars",
+]
+
+[[stages]]
+title = "Scores and tests"
+questions = ["RQ1", "RQ2", "RQ4"]
+bullets = [
+    "CRPS vs. selected baseline",
+    "Diebold--Mariano + Holm",
+    "Power: planted-gain MDE",
+    "Sign and coverage tests",
+    "Pre-release test (DiD)",
+]
+
+[[stages]]
+title = "Trading"
+questions = ["RQ3"]
+bullets = [
+    "Long/short on median sign",
+    "Per-market cost per side",
+    "Net return, break-even cost",
+]
+
+# ---------------------------------------------------------------------------------------------
+# Bottom row: a time axis. Dates are written as TOML dates (YYYY-MM-DD, no quotes); they place
+# the bars and are never printed. Every end date is the last day inside the period.
+# ---------------------------------------------------------------------------------------------
+
+[timeline]
+# First and last day shown on the time axis; a year label is printed for every year in between.
+start = 2020-01-01
+end = 2026-10-31
+
+[timeline.selection]
+# The window the assets were picked on, drawn as a thin line above the axis.
+label = "Asset selection 2020-01 to 2023-12"
+start = 2020-01-01
+end = 2023-12-31
+
+# The periods, in time order. Each is drawn as a bar on the axis and explained by a key below it.
+#   lines - the text of the key, one entry per printed line (lines never wrap)
+#   style - how the bar and its key swatch look: "hatched", "outlined" or "solid" (the strongest)
+#   start, end - first and last day of the period
+
+[[periods]]
+lines = ["Pre-release l1--l12", "2022-01 to 2024-10", "Pre-/post-release test (RQ4)"]
+style = "hatched"
+start = 2022-01-01
+end = 2024-10-31
+
+[[periods]]
+lines = ["Development d1--d4", "2024-11 to 2025-10", "Selected baseline, threshold X"]
+style = "outlined"
+start = 2024-11-01
+end = 2025-10-31
+
+[[periods]]
+lines = ["Test t1--t4", "2025-11 to 2026-10, primary run once", "Each checkpoint from its scoring start"]
+style = "solid"
+start = 2025-11-01
+end = 2026-10-31

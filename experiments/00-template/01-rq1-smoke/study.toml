@@ -1,0 +1,32 @@
+[study]
+name = "01-rq1-smoke"
+question = "Does every zero-shot model load and give valid forecasts for real hourly contexts?"
+
+[plan]
+locked = true
+
+[data]
+tier = 0
+markets = ["crypto", "forex", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "development"
+
+[models]
+names = ["chronos:amazon/chronos-bolt-base", "chronos:amazon/chronos-2", "timesfm:google/timesfm-2.5-200m-pytorch", "timesfm3:google/timesfm-3.0-pytorch", "tirex:NX-AI/TiRex", "tirex2:NX-AI/TiRex-2", "toto2:Datadog/Toto-2.0-22m", "toto2:Datadog/Toto-2.0-313m", "t0:theforecastingcompany/t0-gamma", "moirai2:Salesforce/moirai-2.0-R-small"]
+
+[seeds]
+values = [0]
+
+[compute]
+device = "cuda"
+estimated_hours = 0.15
+estimated_cost_usd = 0.0
+
+[options]
+assets = ["crypto:BTCUSDT:close", "forex:EURUSD:mid_close", "stock:AAPL:close"]
+contexts_per_asset = 8
+lookback = 512
+horizon = 24
+max_median_gap = 0.05

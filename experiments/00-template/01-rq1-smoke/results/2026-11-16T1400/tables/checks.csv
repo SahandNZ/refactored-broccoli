@@ -1,0 +1,11 @@
+model,shape_ok,finite,ordered,max_median_gap,median_ok,passed,load_seconds,predict_seconds,peak_gpu_gb
+chronos:amazon/chronos-bolt-base,True,True,True,0.00262,True,True,2.6,0.81,0.42
+chronos:amazon/chronos-2,True,True,True,0.00228,True,True,0.8,0.07,0.26
+timesfm:google/timesfm-2.5-200m-pytorch,True,True,True,0.00099,True,True,1.6,0.26,1.61
+timesfm3:google/timesfm-3.0-pytorch,True,True,True,0.00138,True,True,1.8,0.25,2.13
+tirex:NX-AI/TiRex,True,True,True,0.00136,True,True,0.7,0.52,0.27
+tirex2:NX-AI/TiRex-2,True,True,True,0.00103,True,True,1.4,2.54,0.61
+toto2:Datadog/Toto-2.0-22m,True,True,True,0.00056,True,True,1.4,0.05,0.31
+toto2:Datadog/Toto-2.0-313m,True,True,True,0.00063,True,True,2.3,0.09,1.32
+t0:theforecastingcompany/t0-gamma,True,True,True,0.00057,True,True,1.3,0.05,2.17
+moirai2:Salesforce/moirai-2.0-R-small,True,True,True,0.00208,True,True,0.0,5.16,1.18

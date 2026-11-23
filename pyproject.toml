@@ -1,0 +1,103 @@
+[project]
+name = "anonymous-benchmark"
+version = "0.1.0"
+description = "Time-series foundation models on crypto perpetual cross-sections."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "torch>=2.15",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "chronos-forecasting==2.3.2",
+    "timesfm[torch]==3.0.2",
+    "huggingface_hub",
+    "einops",
+    "safetensors",
+    "yfinance",
+    "exchange_calendars",
+    "psutil",
+    "matplotlib",
+    "vastai",
+    "tirex-2>=0.5.0",
+    "tirex-ts>=1.4.2",
+    "toto-models>=1.0.0",
+    "tfc-t0[torch]>=0.6.1",
+    "arch>=9.0.0",
+    "scipy",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "hypothesis", "ruff", "pyright", "pandas-stubs", "pytest-cov", "import-linter", "pre-commit"]
+notebook = ["jupyterlab", "ipykernel"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["vendor", "results", ".hf", "./data", ".tmp", "paper"]
+
+# rules from the shared tooling/python/ruff.toml
+[tool.ruff.lint]
+select = [
+    "E", "W", "F", "I", "N", "D", "UP", "B", "SIM", "C4", "C90", "PL", "RET", "PT", "TC",
+    "ERA", "BLE", "S", "RUF",
+]
+ignore = [
+    "PLR2004",  # magic values: research code is full of fixed constants (fees, horizons)
+    "D105",     # magic methods are self-explanatory
+    "D107",     # __init__ is documented in the class docstring (numpy style)
+    "N812",     # `import torch.nn.functional as F` is the PyTorch convention
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "D"]  # pytest uses assert; test names say what they test
+"src/models/__init__.py" = ["PLC0415"]  # TSFM packages are imported lazily (python.md 12)
+"src/models/_new_models.py" = ["PLC0415"]  # each model imports its own package lazily
+"src/figures/*.py" = ["PLC0415"]  # matplotlib and PIL are imported lazily (python.md 12)
+"src/experiment/_runner.py" = ["S603"]  # runs git and nvidia-smi found on PATH with fixed arguments
+"tests/smoke/smoke_models.py" = ["S603"]  # runs itself again with fixed arguments, no user input
+"src/data/_dukascopy.py" = ["PLR0913"]  # download_part: a pool task, its 8 arguments name one part
+"src/figures/_centre_scale.py" = ["PLR0913"]  # draw_centre_scale: its options are keyword-only, each documented
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+max-args = 6
+max-branches = 12
+max-statements = 50
+max-nested-blocks = 3
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.format]
+quote-style = "double"
+docstring-code-format = true
+
+[tool.pyright]
+pythonVersion = "3.12"
+typeCheckingMode = "strict"
+include = ["src", "scripts", "experiments", "tests"]
+reportMissingTypeStubs = false
+venvPath = "."
+venv = ".venv"
+# the pinned Kronos code (src.models._kronos imports its `model` package from there)
+extraPaths = ["vendor/Kronos"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "data: needs the market data on disk",
+    "cuda: needs a GPU",
+]
+
+[tool.ruff.lint.isort]
+# lib is a study's own code package, imported by the study's run.py and analyze.py
+known-first-party = ["src", "lib"]

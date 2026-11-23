@@ -1,0 +1,12 @@
+model,closed_best,control_best,is_same
+chronos-2,trading hours only,trading hours only,True
+chronos-bolt-base,trading hours only,trading hours only,True
+chronos-bolt-small,trading hours only,trading hours only,True
+moirai-2-small,trading hours only,trading hours only,True
+t0-gamma,trading hours only,trading hours only,True
+timesfm-2.5,trading hours only,trading hours only,True
+timesfm-3,trading hours only,trading hours only,True
+tirex-1.1,trading hours only,missing,False
+tirex-2,trading hours only,trading hours only,True
+toto-2-22m,trading hours only,trading hours only,True
+toto-2-313m,trading hours only,trading hours only,True

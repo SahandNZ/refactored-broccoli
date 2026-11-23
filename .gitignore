@@ -1,0 +1,22 @@
+# Data (provider terms forbid redistribution), outputs, environments and caches
+/data/
+/outputs/
+experiments/*/runs/
+experiments/*/forecasts/
+paper/tables/generated/
+paper/figures/
+paper/build/
+paper/scripts/out/
+.venv/
+.venv-moirai/
+.hf/
+vendor/Kronos/
+vendor/dukascopy/node_modules/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+.ipynb_checkpoints/
+.DS_Store
+.env
+*.env

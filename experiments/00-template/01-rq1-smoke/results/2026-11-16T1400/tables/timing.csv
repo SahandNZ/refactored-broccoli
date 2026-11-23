@@ -1,0 +1,11 @@
+model,predict_seconds,peak_gpu_gb
+chronos:amazon/chronos-bolt-base,0.81,0.42
+chronos:amazon/chronos-2,0.07,0.26
+timesfm:google/timesfm-2.5-200m-pytorch,0.26,1.61
+timesfm3:google/timesfm-3.0-pytorch,0.25,2.13
+tirex:NX-AI/TiRex,0.52,0.27
+tirex2:NX-AI/TiRex-2,2.54,0.61
+toto2:Datadog/Toto-2.0-22m,0.05,0.31
+toto2:Datadog/Toto-2.0-313m,0.09,1.32
+t0:theforecastingcompany/t0-gamma,0.05,2.17
+moirai2:Salesforce/moirai-2.0-R-small,5.16,1.18

@@ -1,0 +1,64 @@
+[study]
+name = "03-rq1-null"
+question = "Does any zero-shot foundation model beat the best simple baseline on any market at 1, 4 or 24 bars, after its release?"
+
+[plan]
+# locked on 2026-11-17 (owner's approval) after the development runs dev-2026-11-17 of 09 and
+# 03: X = 2 % (09 Q1), 03 Q1 no and Q2 yes on d1-d4; nothing of the rule changes from here on
+locked = true
+
+[data]
+tier = 1
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "test"
+
+[models]
+names = ["chronos-bolt-small", "chronos-bolt-base", "chronos-2", "timesfm-2.5", "timesfm-3", "tirex-1.1", "tirex-2", "toto-2-22m", "toto-2-313m", "t0-gamma", "moirai-2-small", "kronos-small", "kronos-base", "random-walk", "climatology", "ewma-normal", "garch-normal", "linear"]
+
+[seeds]
+values = [0, 1, 2]
+
+[compute]
+device = "cpu"
+estimated_hours = 0.5
+estimated_cost_usd = 0.0
+
+[options]
+# the run id of 02-forecasts whose cache this study reads (runs/<id>/ of that study)
+forecast_cache = "test-2026-11-17"
+# one-sided level of the Diebold-Mariano test (H1: the model has the lower CRPS)
+alpha = 0.05
+min_winning_quarters = 3
+# Holm families: a model with at least this many scored quarters wholly after its scoring
+# start is in the main family (the main verdict); the others form the late family
+main_family_min_quarters = 3
+# moving-block bootstrap draws of the skill interval of each cell (blocks of the cell's test)
+skill_resamples = 2000
+# Q2, the power of the Q1 rule: planted CRPS gains over the best baseline, in % of its CRPS
+power_improvements_pct = [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0]
+power_target = 0.8
+# moving-block bootstrap of the decision rule's checks: the level is 1 - alpha; the blocks of
+# the skill interval and the power analysis are the cell's Politis-White block (at least twice
+# the labels' overlap); bootstrap_block_hours and bootstrap_min_block give the overlap count
+# its shared settings (src.benchmark.cell_timing)
+bootstrap_block_hours = 24
+bootstrap_min_block = 4
+bootstrap_resamples = 1000
+bootstrap_seed = 0
+# Q2 judges the cells of this horizon, in the asset's own bars (09-mde-threshold reads it too)
+mde_horizon = 1
+# Q2 threshold X in % of the best baseline's CRPS: set it from the result of 09-mde-threshold
+# (09's run dev-2026-11-17-nokronos gave 2.0: 90 % of the 10 cells at 1 bar reach it); analyze.py
+# reads it from the run's config.toml
+mde_threshold_pct = 2.0
+# the thresholds X swept for the share of cells with MDE at or below X (0 to 10 % in steps of
+# 0.5)
+mde_threshold_grid_pct = [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0]
+# the power rule: powered when at least this share of the cells at mde_horizon has an MDE at
+# or below X (09 picks X as the smallest grid value reaching it on d1-d4); the other shares
+# are reported as sensitivity rows only
+power_share = 0.8
+power_share_sensitivity = [0.5, 0.9]

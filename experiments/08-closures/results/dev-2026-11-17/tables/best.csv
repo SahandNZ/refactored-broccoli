@@ -1,0 +1,6 @@
+model,closed_best,control_best,is_same
+chronos-bolt-base,trading hours only,trading hours only,True
+chronos-bolt-small,trading hours only,trading hours only,True
+moirai-2-small,trading hours only,trading hours only,True
+timesfm-2.5,trading hours only,trading hours only,True
+tirex-1.1,trading hours only,missing,False

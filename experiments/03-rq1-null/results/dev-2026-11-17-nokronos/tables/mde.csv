@@ -1,0 +1,78 @@
+model,market,horizon,family,baseline,times,quarters,mde_pct,is_reached,largest_pct,zero_rate,false_positive_level
+chronos-2,commodity,1,late,climatology,43,1,,False,10.0,0.0,0.0010638297872340426
+chronos-2,crypto,1,late,climatology,47,1,,False,10.0,0.0,0.0010638297872340426
+chronos-2,forex,1,late,linear,44,1,,False,10.0,0.0,0.0010638297872340426
+chronos-2,index,1,late,climatology,43,1,,False,10.0,0.0,0.0010638297872340426
+chronos-bolt-base,commodity,1,main,climatology,5547,4,1.3973607038123168,True,10.0,0.015,0.0016666666666666668
+chronos-bolt-base,commodity,4,main,climatology,5535,4,1.3101604278074868,True,10.0,0.001,0.0016666666666666668
+chronos-bolt-base,commodity,24,main,"climatology, linear",5455,4,3.2889610389610393,True,10.0,0.003,0.0016666666666666668
+chronos-bolt-base,crypto,1,main,climatology,8183,4,1.586309523809524,True,10.0,0.02,0.0016666666666666668
+chronos-bolt-base,crypto,4,main,climatology,8171,4,1.9773462783171523,True,10.0,0.003,0.0016666666666666668
+chronos-bolt-base,crypto,24,main,climatology,8091,4,5.18452380952381,True,10.0,0.009,0.0016666666666666668
+chronos-bolt-base,forex,1,main,linear,5838,4,0.9409448818897639,True,10.0,0.003,0.0016666666666666668
+chronos-bolt-base,forex,4,main,"climatology, linear",5826,4,0.9071942446043166,True,10.0,0.004,0.0016666666666666668
+chronos-bolt-base,forex,24,main,climatology,5746,4,2.4322033898305087,True,10.0,0.001,0.0016666666666666668
+chronos-bolt-base,index,1,main,climatology,5592,4,1.5292397660818713,True,10.0,0.015,0.0016666666666666668
+chronos-bolt-base,index,4,main,"climatology, linear",5580,4,1.348086124401914,True,10.0,0.005,0.0016666666666666668
+chronos-bolt-base,index,24,main,climatology,5500,4,3.7803030303030307,True,10.0,0.013,0.0016666666666666668
+chronos-bolt-base,stock,1,main,climatology,4807,4,1.2275641025641026,True,10.0,0.0,0.0016666666666666668
+chronos-bolt-base,stock,4,main,climatology,4776,4,1.25,True,10.0,0.002,0.0016666666666666668
+chronos-bolt-base,stock,24,main,"climatology, garch-normal",4540,4,3.465034965034965,True,10.0,0.007,0.0016666666666666668
+chronos-bolt-small,commodity,1,main,climatology,5547,4,1.4576023391812867,True,10.0,0.004,0.0016666666666666668
+chronos-bolt-small,commodity,4,main,climatology,5535,4,1.2611940298507465,True,10.0,0.002,0.0016666666666666668
+chronos-bolt-small,commodity,24,main,"climatology, linear",5455,4,2.88860103626943,True,10.0,0.005,0.0016666666666666668
+chronos-bolt-small,crypto,1,main,climatology,8183,4,2.285714285714286,True,10.0,0.101,0.0016666666666666668
+chronos-bolt-small,crypto,4,main,climatology,8171,4,1.840531561461794,True,10.0,0.0,0.0016666666666666668
+chronos-bolt-small,crypto,24,main,climatology,8091,4,4.91919191919192,True,10.0,0.004,0.0016666666666666668
+chronos-bolt-small,forex,1,main,linear,5838,4,0.891304347826087,True,10.0,0.002,0.0016666666666666668
+chronos-bolt-small,forex,4,main,"climatology, linear",5826,4,0.9016152716593245,True,10.0,0.002,0.0016666666666666668
+chronos-bolt-small,forex,24,main,climatology,5746,4,1.916376306620209,True,10.0,0.003,0.0016666666666666668
+chronos-bolt-small,index,1,main,climatology,5592,4,1.3604651162790697,True,10.0,0.002,0.0016666666666666668
+chronos-bolt-small,index,4,main,"climatology, linear",5580,4,1.2618384401114207,True,10.0,0.006,0.0016666666666666668
+chronos-bolt-small,index,24,main,climatology,5500,4,3.3161764705882355,True,10.0,0.006,0.0016666666666666668
+chronos-bolt-small,stock,1,main,climatology,4807,4,1.2260479041916168,True,10.0,0.002,0.0016666666666666668
+chronos-bolt-small,stock,4,main,climatology,4776,4,1.2274143302180687,True,10.0,0.003,0.0016666666666666668
+chronos-bolt-small,stock,24,main,"climatology, garch-normal",4540,4,2.6196319018404908,True,10.0,0.0,0.0016666666666666668
+moirai-2-small,commodity,1,late,climatology,1444,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,commodity,4,late,climatology,1441,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,commodity,24,late,climatology,1421,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,crypto,1,late,climatology,2087,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,crypto,4,late,climatology,2084,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,crypto,24,late,climatology,2064,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,forex,1,late,linear,1508,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,forex,4,late,linear,1505,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,forex,24,late,climatology,1485,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,index,1,late,climatology,1446,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,index,4,late,climatology,1443,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,index,24,late,climatology,1423,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,stock,1,late,climatology,1242,1,,False,10.0,0.0,0.0010638297872340426
+moirai-2-small,stock,4,late,climatology,1235,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,commodity,1,late,climatology,1009,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,commodity,4,late,climatology,1006,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,commodity,24,late,climatology,986,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,crypto,1,late,climatology,1439,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,crypto,4,late,climatology,1436,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,crypto,24,late,climatology,1416,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,forex,1,late,linear,1052,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,forex,4,late,linear,1049,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,forex,24,late,climatology,1029,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,index,1,late,climatology,1009,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,index,4,late,climatology,1006,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,index,24,late,climatology,986,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,stock,1,late,climatology,868,1,,False,10.0,0.0,0.0010638297872340426
+timesfm-2.5,stock,4,late,climatology,861,1,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,commodity,1,late,climatology,2633,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,commodity,4,late,climatology,2627,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,commodity,24,late,"climatology, linear",2587,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,crypto,1,late,climatology,3815,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,crypto,4,late,climatology,3809,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,crypto,24,late,climatology,3769,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,forex,1,late,linear,2756,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,forex,4,late,linear,2750,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,forex,24,late,climatology,2710,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,index,1,late,climatology,2642,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,index,4,late,"climatology, linear",2636,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,index,24,late,climatology,2596,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,stock,1,late,climatology,2266,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,stock,4,late,climatology,2251,2,,False,10.0,0.0,0.0010638297872340426
+tirex-1.1,stock,24,late,garch-normal,2134,2,,False,10.0,0.0,0.0010638297872340426

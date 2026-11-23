@@ -1,0 +1,19 @@
+model,sample,top_p,paths,horizon,decisions,coverage,median_width
+kronos-small,all decisions,0.9000,"3 seeds pooled, 60",1,3956,0.6239,1.7965
+kronos-small,all decisions,0.9000,"3 seeds pooled, 60",4,3956,0.5862,1.6135
+kronos-small,all decisions,0.9000,"3 seeds pooled, 60",24,3836,0.4731,1.7825
+kronos-small,all decisions,0.9000,"seed 0, 20",1,3956,0.5842,1.6767
+kronos-small,all decisions,0.9000,"seed 0, 20",4,3956,0.5503,1.4960
+kronos-small,all decisions,0.9000,"seed 0, 20",24,3836,0.4374,1.6459
+kronos-small,150 contexts of the last window,0.9000,"seed 0, 20",1,150,0.5933,1.6701
+kronos-small,150 contexts of the last window,0.9000,"seed 0, 20",4,150,0.5200,1.5685
+kronos-small,150 contexts of the last window,0.9000,"seed 0, 20",24,142,0.4225,1.6560
+kronos-small,150 contexts of the last window,1.0000,"seed 0, 20",1,150,0.6467,1.9233
+kronos-small,150 contexts of the last window,1.0000,"seed 0, 20",4,150,0.6267,1.9287
+kronos-small,150 contexts of the last window,1.0000,"seed 0, 20",24,142,0.4085,2.2372
+kronos-base,all decisions,0.9000,"3 seeds pooled, 60",1,3956,0.6277,1.8263
+kronos-base,all decisions,0.9000,"3 seeds pooled, 60",4,3956,0.6148,1.6523
+kronos-base,all decisions,0.9000,"3 seeds pooled, 60",24,3836,0.4536,1.6992
+kronos-base,all decisions,0.9000,"seed 0, 20",1,3956,0.5789,1.6978
+kronos-base,all decisions,0.9000,"seed 0, 20",4,3956,0.5771,1.5383
+kronos-base,all decisions,0.9000,"seed 0, 20",24,3836,0.4121,1.5715

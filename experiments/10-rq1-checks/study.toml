@@ -1,0 +1,40 @@
+[study]
+name = "10-rq1-checks"
+question = "Do the RQ1 answers hold when every model is scored on Kronos's decision points?"
+
+[plan]
+# exploratory checks of rq1, planned and locked on 2026-11-18 (owner's approval) after rq1's
+# test results were seen; they never change rq1's answer
+locked = true
+
+[data]
+tier = 1
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "test"
+
+[models]
+# rq1's main family (released before the test period) and the five baselines, in paper order
+names = ["random-walk", "climatology", "ewma-normal", "garch-normal", "linear", "chronos-bolt-small", "chronos-bolt-base", "chronos-2", "timesfm-2.5", "tirex-1.1", "moirai-2-small", "kronos-small", "kronos-base"]
+
+[seeds]
+# the cache pools Kronos's seeds 0-2 (as rq1); nothing here draws with them
+values = [0, 1, 2]
+
+[compute]
+device = "cpu"
+estimated_hours = 0.5
+estimated_cost_usd = 0.0
+
+[options]
+# the run id of 02-forecasts whose cache this study reads (runs/<id>/ of that study); the rule
+# of rq1 (alpha, quarters, bootstrap, skill draws) is read from 03-rq1-null's study.toml
+forecast_cache = "test-2026-11-17"
+# Q1: the grid model whose decisions every model is scored on (Kronos-base decides at the same
+# points), and the shortest closure before a reopening bar (as 08-closures)
+grid_model = "kronos-small"
+min_closure_hours = 12
+# the horizon of the hourly-against-Kronos gain (Metrics)
+gap_horizon = 1

@@ -1,0 +1,33 @@
+[study]
+name = "11-closures-length"
+question = "After a closure, is the effect of 08-closures' inputs one of the context's length or of how closed hours are shown?"
+
+[plan]
+# exploratory, planned and locked on 2026-11-18 (owner's approval) after 08-closures' test
+# results were seen; it never changes 08's answers
+locked = true
+
+[data]
+tier = 1
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "test"
+
+[models]
+# the models are those of the 08-closures run (read from its metrics.parquet)
+names = []
+
+[seeds]
+values = [0]
+
+[compute]
+device = "cpu"
+estimated_hours = 0.2
+estimated_cost_usd = 0.0
+
+[options]
+# the 08-closures run whose per-decision scores (metrics.parquet), settings (config.toml) and
+# Holm families (results verdict.csv) this study reads
+closures_run = "test-2026-11-17"

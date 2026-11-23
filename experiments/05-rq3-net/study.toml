@@ -1,0 +1,62 @@
+[study]
+name = "05-rq3-net"
+question = "Does trading the sign of a model's median earn money after each market's costs, and up to which cost?"
+
+[plan]
+# locked on 2026-11-17 (owner's approval, run card of 19:06 UTC) after the development run
+# dev-2026-11-17 (Q1 no on d1-d4); nothing of the rule changes from here on
+locked = true
+
+[data]
+tier = 1
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "test"
+
+[models]
+names = ["chronos-bolt-small", "chronos-bolt-base", "chronos-2", "timesfm-2.5", "timesfm-3", "tirex-1.1", "tirex-2", "toto-2-22m", "toto-2-313m", "t0-gamma", "moirai-2-small", "kronos-small", "kronos-base", "random-walk", "climatology", "ewma-normal", "garch-normal", "linear"]
+
+[seeds]
+values = [0, 1, 2]
+
+[compute]
+device = "cpu"
+estimated_hours = 0.5
+estimated_cost_usd = 0.0
+
+[options]
+# the run id of 02-forecasts whose cache this study reads (runs/<id>/ of that study); the costs
+# per side of every asset come from that cache's assets.csv
+forecast_cache = "test-2026-11-17"
+# every test is one-sided, H1: the mean net return is above 0, at this level; the intervals
+# cover 1 - alpha
+alpha = 0.05
+# Holm families, each over all horizons and markets: a model with at least main_min_quarters
+# scored folds that start on or after its release is in the main family, the others in the
+# late-release family (its own verdict); Q1 is yes if a main-family cell earns
+main_min_quarters = 3
+# a scored cell whose turnover per effective time (total turnover over its effective times) is below
+# min_turnover is flagged as low turnover (its sign almost never changes: close to buy and
+# hold, its break-even is gross over almost no turnover); 0.05 = one side every 20 positions
+# per asset when the market's assets share their bar times
+min_turnover = 0.05
+# circular-block bootstrap of each book (src.stats.bootstrap_mean_test, t reference): the
+# block is the longest automatic length (src.stats.politis_white_block) of its net and gross
+# returns and turnover, at least 2 and at least src.stats.BLOCK_OVERLAP_FLOOR (4) times the
+# book's overlap (rq1's floor); a book needs 5 blocks for a test (MIN_BOOTSTRAP_BLOCKS); a
+# cell with fewer than bootstrap_min_blocks blocks, counted in effective times (for h > 1
+# those with a return or a trade), is flagged
+bootstrap_min_blocks = 10
+bootstrap_resamples = 2000
+bootstrap_seed = 0
+# read by the shared settings of src.benchmark (study_settings); rq3 does not use them, its
+# block is automatic
+bootstrap_block_hours = 24
+bootstrap_min_block = 4
+# the reference row of the tables: the ridge regression (its median is x . w plus the median
+# in-sample residual); buy and hold is the second reference row, always
+reference = "linear"
+# the horizon of the paper's tables, in the asset's own bars: 1 (buy and hold is at horizon 1)
+table_horizon = 1

@@ -1,0 +1,3 @@
+model,window,asset,convergence_flag
+garch-normal,l3,NATGAS,8
+garch-normal,l4,NFLX,8

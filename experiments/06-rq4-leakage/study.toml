@@ -1,0 +1,62 @@
+[study]
+name = "06-rq4-leakage"
+question = "Does each model do better on data it may have seen in pretraining than after, beyond the best baseline's change?"
+
+[plan]
+locked = true
+
+[data]
+tier = 1
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "test"
+
+[models]
+names = ["chronos-bolt-small", "chronos-bolt-base", "chronos-2", "timesfm-2.5", "timesfm-3", "tirex-1.1", "tirex-2", "toto-2-22m", "toto-2-313m", "t0-gamma", "moirai-2-small", "kronos-small", "kronos-base", "random-walk", "climatology", "ewma-normal", "garch-normal", "linear"]
+
+[seeds]
+values = [0, 1, 2]
+
+[compute]
+device = "cpu"
+estimated_hours = 0.5
+estimated_cost_usd = 0.0
+
+[options]
+# the run id of 02-forecasts whose cache this study reads (runs/<id>/ of that study)
+forecast_cache = "test-2026-11-17"
+# the run id of a second 02-forecasts run of the same configuration and data that holds
+# the leakage quarters l1-l12 the first one lacks (built with run.py --windows); "" reads the
+# first alone
+leakage_cache = "leakage-2026-11-18"
+# level of every test, one-sided (H1: the first period's skill is higher; the placebo two-sided);
+# Holm per test family
+alpha = 0.05
+# required by the shared reader src.benchmark.read_bootstrap only: rq4's blocks are Politis-White
+# per period, at least 4 times the label overlap and 2 (as rq1), not these fixed lengths; a period
+# needs src.stats.MIN_BOOTSTRAP_BLOCKS blocks
+bootstrap_block_hours = 24
+bootstrap_min_block = 4
+bootstrap_resamples = 2000
+bootstrap_seed = 0
+# every period of a model that decides every hour keeps the decisions of a grid every grid_hours
+# from each window start, the step of the leakage quarters (02-forecasts step_hours.leakage); the
+# full hourly after period is the check "hourly"
+grid_hours = 4
+# placebo (report only, two-sided): the before period of these models split at placebo_split
+# (decision time): 2022-2023 minus 2024, both before their release
+placebo_models = ["chronos-bolt-small", "chronos-bolt-base"]
+placebo_split = "2024-01-01"
+# models whose leakage quarters are not built; with the locked plan (before = l1-l12) their cells
+# are reported as not built, while the plan is open (before = d1-d4) they are scored as usual.
+# Empty: kronos-small and kronos-base were sampled on vast.ai (2026-11-17) and pooled into
+# leakage_cache
+not_built = []
+# fig:rq4 shows the cells of this horizon (bars), as the paper's figure (1 bar)
+figure_horizon = 1
+# the rows of fig:rq4 follow tab:rq1 and fig:rq2: a model with fewer than this many test
+# quarters wholly after its release goes after the others (rq1's main_family_min_quarters);
+# it only orders the rows, rq4 tests every model in one Holm family
+figure_family_min_quarters = 3

@@ -1,0 +1,81 @@
+[study]
+name = "07-rq5-off-hours"
+question = "When a market is closed, how should a zero-shot model be fed: does weekend crypto, given as a covariate, improve the forecast of the reopening (secondary to 08-closures)?"
+
+[plan]
+# locked on 2026-11-17 (owner's approval of the dev and test runs together); the dev run
+# dev-2026-11-17 uses folds "development" (the configuration before this lock)
+locked = true
+
+[data]
+# Q1 forecasts the closed-market assets of the benchmark's universe; Q2 regresses every
+# closed-market candidate that passed 01-universe's data checks of 2020-2023 (both from the
+# 01-universe run of the option universe_run); crypto is only the
+# basket below; stocks stay out (the README says why)
+tier = 0
+markets = ["crypto", "forex", "commodity", "index"]
+timeframes = ["1h"]
+
+[folds]
+use = "test"
+
+[models]
+# TimesFM 3.0 is left out: it fills NaN by linear interpolation, so it has no calendar arm
+names = ["chronos-2", "tirex-2", "t0-gamma"]
+
+[seeds]
+values = [0]
+
+[compute]
+device = "cuda"
+estimated_hours = 1.0
+estimated_cost_usd = 0.0
+
+[options]
+# the run id of 02-forecasts whose config.toml gives the context length (lookback), the label's
+# EWMA span, how each model is built and its pinned revision, so they are the benchmark's
+# (written in one place)
+forecast_cache = "test-2026-11-17"
+# the 01-universe run whose tables/universe.csv gives the assets: Q1 forecasts its closed-market
+# universe (which must be the universe of the 02-forecasts run's universe_run, the paper's),
+# Q2 regresses its closed-market candidates that passed the data checks of 2020-2023
+universe_run = "2026-11-17T1235-data-filter-column"
+# the crypto move is the mean log return of these Binance USD-M perpetuals
+crypto_basket = ["BTCUSDT", "ETHUSDT", "SOLUSDT", "XRPUSDT", "BNBUSDT"]
+# Q2 uses the weekends that reopen from start to the end of the scored folds; Q1 forecasts those
+# from split_date (only the scored folds' weekends are scored, the earlier ones fit the
+# correction and the model-free arm)
+start = "2020-01-01"
+split_date = "2024-01-01"
+# a weekend is a closure of at least min_closed_hours and at most max_closed_hours hours that
+# reopens on a Sunday or Monday (UTC); a longer one (a data outage, a holiday that starts
+# midweek) carries several days of crypto moves and is left out (a normal weekend is about 49
+# hours, a Good Friday one about 73)
+min_closed_hours = 24
+max_closed_hours = 96
+# Friday's information: the asset's and the basket's log return over the hours before the close
+friday_hours = 6
+# Q2: Newey-West lags (weekends) and the trimmed rank correlation leaves out the weekends of
+# the largest absolute crypto move; a group of Q2 or a cell of Q1 with fewer weekends is not
+# tested
+hac_lags = 4
+trim_largest = 5
+min_weekends = 20
+# significance level of the Holm-adjusted tests: one-sided in Q1 (H1: the arm has the lower
+# CRPS than its reference), two-sided in Q2 (the sign of the crypto coefficient is not known
+# in advance for every market)
+alpha = 0.05
+# coverage of the skill intervals (Q1, moving-block bootstrap with the Politis-White block of
+# the loss difference, at least src.stats.BLOCK_OVERLAP_FLOOR (4) times the label overlap)
+# and of the coefficient intervals (Q2, from the HAC standard error)
+interval_level = 0.95
+bootstrap_resamples = 2000
+bootstrap_seed = 0
+# Q1 correction and model-free arm: the fewest earlier weekends of a fit, and the width factors
+# the correction chooses from
+# (np.linspace(first, last, count): 0.5, 0.55, ..., 10.0; the label covers the whole closure,
+# often several hourly sigmas, while the event forecast is one bar wide, so the grid reaches
+# far; reopening_cells reports the share of fits at an end of the grid, width_at_edge)
+min_fit_weekends = 26
+width_factors = { first = 0.5, last = 10.0, count = 191 }
+

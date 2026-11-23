@@ -1,0 +1,8 @@
+{
+  "name": "anonymous-benchmark-dukascopy",
+  "private": true,
+  "description": "Pinned dukascopy-node command line tool used by src.data._dukascopy",
+  "dependencies": {
+    "dukascopy-node": "1.51.1"
+  }
+}

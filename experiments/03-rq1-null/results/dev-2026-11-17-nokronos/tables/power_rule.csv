@@ -1,0 +1,4 @@
+share_needed,share,is_powered,is_main
+0.8,0.9,True,True
+0.5,0.9,True,False
+0.9,0.9,True,False

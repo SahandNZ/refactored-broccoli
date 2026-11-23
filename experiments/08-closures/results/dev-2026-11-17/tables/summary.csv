@@ -1,0 +1,347 @@
+model,group,representation,split,status,short_contexts,decisions,days,times,invalid,crps,coverage,closed_share
+chronos-bolt-small,closed markets,trading hours only,all,scored,0,30021.0,294.0,3075.0,0.0,0.8207537352840227,0.7658929520359321,0.0
+chronos-bolt-small,closed markets,trading hours only,bar 0,scored,0,9986.0,293.0,1530.0,0.0,1.2639367383201707,0.5809386314199604,0.0
+chronos-bolt-small,closed markets,trading hours only,bar 1,scored,0,10015.0,293.0,1533.0,0.0,0.647912157960287,0.8280600568336465,0.0
+chronos-bolt-small,closed markets,trading hours only,bar 2,scored,0,10020.0,294.0,1534.0,0.0,0.5187107024844514,0.9001736924419748,0.0
+chronos-bolt-small,closed markets,trading hours only,night,scored,0,20046.0,193.0,2212.0,0.0,0.7834278726570691,0.7759482881936367,0.0
+chronos-bolt-small,closed markets,trading hours only,weekend,scored,0,9418.0,119.0,892.0,0.0,0.8983603650390015,0.7456291422837157,0.0
+chronos-bolt-small,closed markets,trading hours only,other,scored,0,557.0,18.0,89.0,0.0,0.8645776662034956,0.7670061079987551,0.0
+chronos-bolt-small,closed markets,forward-filled,all,scored,0,30021.0,294.0,3075.0,29.0,0.8707373375143866,0.5415074423014984,0.6903042401212053
+chronos-bolt-small,closed markets,forward-filled,bar 0,scored,0,9986.0,293.0,1530.0,27.0,1.3735148078735169,0.2716849605934378,0.6860461269675157
+chronos-bolt-small,closed markets,forward-filled,bar 1,scored,0,10015.0,293.0,1533.0,1.0,0.6828359792058526,0.6315290912335934,0.6840072857047985
+chronos-bolt-small,closed markets,forward-filled,bar 2,scored,0,10020.0,294.0,1534.0,1.0,0.5213159202782348,0.7337284041063052,0.6808565224790619
+chronos-bolt-small,closed markets,forward-filled,night,scored,0,20046.0,193.0,2212.0,2.0,0.8329029787552678,0.550407830805558,0.7793617829069424
+chronos-bolt-small,closed markets,forward-filled,weekend,scored,0,9418.0,119.0,892.0,26.0,0.9541816118692118,0.5231356405597143,0.5655515859391644
+chronos-bolt-small,closed markets,forward-filled,other,scored,0,557.0,18.0,89.0,1.0,0.9131544759196741,0.5456760912370934,0.7113372879071415
+chronos-bolt-small,closed markets,missing,all,scored,0,30021.0,294.0,3075.0,1.0,1.0726753442871493,0.6671174465085674,0.6903042401212053
+chronos-bolt-small,closed markets,missing,bar 0,scored,0,9986.0,293.0,1530.0,0.0,1.6355738964603064,0.6513426965182386,0.6860461269675157
+chronos-bolt-small,closed markets,missing,bar 1,scored,0,10015.0,293.0,1533.0,0.0,0.8756625998506514,0.6515352083755768,0.6840072857047985
+chronos-bolt-small,closed markets,missing,bar 2,scored,0,10020.0,294.0,1534.0,1.0,0.6746479886330536,0.7205651175490361,0.6808565224790619
+chronos-bolt-small,closed markets,missing,night,scored,0,20046.0,193.0,2212.0,1.0,0.921342608787812,0.6689337194312466,0.7793617829069424
+chronos-bolt-small,closed markets,missing,weekend,scored,0,9418.0,119.0,892.0,0.0,1.3592906388506611,0.650842789199837,0.5655515859391644
+chronos-bolt-small,closed markets,missing,other,scored,0,557.0,18.0,89.0,0.0,1.0233171789084645,0.694727150119307,0.7113372879071415
+chronos-bolt-small,closed markets,benchmark input,all,scored,0,30021.0,294.0,3075.0,0.0,0.8413943238629155,0.7718789227599231,0.0
+chronos-bolt-small,closed markets,benchmark input,bar 0,scored,0,9986.0,293.0,1530.0,0.0,1.2726213365677352,0.5954195779589777,0.0
+chronos-bolt-small,closed markets,benchmark input,bar 1,scored,0,10015.0,293.0,1533.0,0.0,0.6759015269526746,0.827947782710757,0.0
+chronos-bolt-small,closed markets,benchmark input,bar 2,scored,0,10020.0,294.0,1534.0,0.0,0.5459112912768835,0.8997787727497112,0.0
+chronos-bolt-small,closed markets,benchmark input,night,scored,0,20046.0,193.0,2212.0,0.0,0.8092073154964051,0.7811503582184811,0.0
+chronos-bolt-small,closed markets,benchmark input,weekend,scored,0,9418.0,119.0,892.0,0.0,0.9082757337256889,0.7543161941570422,0.0
+chronos-bolt-small,closed markets,benchmark input,other,scored,0,557.0,18.0,89.0,0.0,0.8674031262619231,0.7764859011318705,0.0
+chronos-bolt-small,"crypto, weekends cut",trading hours only,all,scored,0,1163.0,49.0,146.0,0.0,1.851522618448863,0.6327745383867832,0.0
+chronos-bolt-small,"crypto, weekends cut",trading hours only,bar 0,scored,0,382.0,48.0,48.0,0.0,4.311619086687636,0.2150297619047619,0.0
+chronos-bolt-small,"crypto, weekends cut",trading hours only,bar 1,scored,0,390.0,49.0,49.0,0.0,0.7344647599145888,0.8177842565597667,0.0
+chronos-bolt-small,"crypto, weekends cut",trading hours only,bar 2,scored,0,391.0,49.0,49.0,0.0,0.5833472655717279,0.8494897959183674,0.0
+chronos-bolt-small,"crypto, weekends cut",trading hours only,weekend,scored,0,1163.0,49.0,146.0,0.0,1.851522618448863,0.6327745383867832,0.0
+chronos-bolt-small,"crypto, weekends cut",forward-filled,all,scored,0,1163.0,49.0,146.0,5.0,1.9001004001026935,0.5696064139941691,0.29490194515306123
+chronos-bolt-small,"crypto, weekends cut",forward-filled,bar 0,scored,0,382.0,48.0,48.0,2.0,4.480606242372566,0.12388392857142856,0.296875
+chronos-bolt-small,"crypto, weekends cut",forward-filled,bar 1,scored,0,390.0,49.0,49.0,2.0,0.7157075029000591,0.7919096209912537,0.294921875
+chronos-bolt-small,"crypto, weekends cut",forward-filled,bar 2,scored,0,391.0,49.0,49.0,1.0,0.5846675782804808,0.7751457725947523,0.29296875
+chronos-bolt-small,"crypto, weekends cut",forward-filled,weekend,scored,0,1163.0,49.0,146.0,5.0,1.9001004001026935,0.5696064139941691,0.29490194515306123
+chronos-bolt-small,"crypto, weekends cut",missing,all,scored,0,1163.0,49.0,146.0,0.0,2.054326716769622,0.5932944606413993,0.29490194515306123
+chronos-bolt-small,"crypto, weekends cut",missing,bar 0,scored,0,382.0,48.0,48.0,0.0,4.423860109739985,0.3255208333333333,0.296875
+chronos-bolt-small,"crypto, weekends cut",missing,bar 1,scored,0,390.0,49.0,49.0,0.0,0.9721037943588637,0.7314139941690962,0.294921875
+chronos-bolt-small,"crypto, weekends cut",missing,bar 2,scored,0,391.0,49.0,49.0,0.0,0.8192899596050485,0.7219387755102041,0.29296875
+chronos-bolt-small,"crypto, weekends cut",missing,weekend,scored,0,1163.0,49.0,146.0,0.0,2.054326716769622,0.5932944606413993,0.29490194515306123
+chronos-bolt-small,"crypto, weekends cut",benchmark input,all,scored,0,1163.0,49.0,146.0,0.0,1.8538029681793944,0.6364188532555879,0.0
+chronos-bolt-small,"crypto, weekends cut",benchmark input,bar 0,scored,0,382.0,48.0,48.0,0.0,4.28858358839411,0.2336309523809524,0.0
+chronos-bolt-small,"crypto, weekends cut",benchmark input,bar 1,scored,0,390.0,49.0,49.0,0.0,0.7474632756100986,0.8079446064139942,0.0
+chronos-bolt-small,"crypto, weekends cut",benchmark input,bar 2,scored,0,391.0,49.0,49.0,0.0,0.5999681593585172,0.8520408163265306,0.0
+chronos-bolt-small,"crypto, weekends cut",benchmark input,weekend,scored,0,1163.0,49.0,146.0,0.0,1.8538029681793944,0.6364188532555879,0.0
+chronos-bolt-base,closed markets,trading hours only,all,scored,0,29768.0,294.0,3074.0,4.0,0.8211948606634831,0.74722907390384,0.0
+chronos-bolt-base,closed markets,trading hours only,bar 0,scored,0,9796.0,293.0,1527.0,1.0,1.2776419324298884,0.5535333609206827,0.0
+chronos-bolt-base,closed markets,trading hours only,bar 1,scored,0,9981.0,293.0,1532.0,2.0,0.6519818060056028,0.8074501945545662,0.0
+chronos-bolt-base,closed markets,trading hours only,bar 2,scored,0,9991.0,294.0,1534.0,1.0,0.5130238568244155,0.8870680567570571,0.0
+chronos-bolt-base,closed markets,trading hours only,night,scored,0,19906.0,193.0,2212.0,3.0,0.7829733384185168,0.7512228712598177,0.0
+chronos-bolt-base,closed markets,trading hours only,weekend,scored,0,9307.0,119.0,891.0,1.0,0.9003965912343521,0.7357900771411638,0.0
+chronos-bolt-base,closed markets,trading hours only,other,scored,0,555.0,18.0,89.0,0.0,0.8671213229297394,0.741875542304464,0.0
+chronos-bolt-base,closed markets,forward-filled,all,scored,0,29768.0,294.0,3074.0,279.0,0.8835165655613207,0.49249913732578277,0.6904909975854013
+chronos-bolt-base,closed markets,forward-filled,bar 0,scored,0,9796.0,293.0,1527.0,216.0,1.3985029918627772,0.2285245818429416,0.6865441260562068
+chronos-bolt-base,closed markets,forward-filled,bar 1,scored,0,9981.0,293.0,1532.0,33.0,0.6986294438063212,0.5925086996513417,0.6841292551382081
+chronos-bolt-base,closed markets,forward-filled,bar 2,scored,0,9991.0,294.0,1534.0,30.0,0.5257443712239659,0.6740430728429678,0.6809572514148913
+chronos-bolt-base,closed markets,forward-filled,night,scored,0,19906.0,193.0,2212.0,140.0,0.8479929265797245,0.49030144667465086,0.7792819688727205
+chronos-bolt-base,closed markets,forward-filled,weekend,scored,0,9307.0,119.0,891.0,136.0,0.9648039001470549,0.4918072339427341,0.566135045562082
+chronos-bolt-base,closed markets,forward-filled,other,scored,0,555.0,18.0,89.0,3.0,0.935103122090159,0.5165032417755729,0.7112955565747199
+chronos-bolt-base,closed markets,missing,all,scored,0,29768.0,294.0,3074.0,0.0,1.0328128693599792,0.7957027753072838,0.6904909975854013
+chronos-bolt-base,closed markets,missing,bar 0,scored,0,9796.0,293.0,1527.0,0.0,1.7953402465597654,0.7335878643206489,0.6865441260562068
+chronos-bolt-base,closed markets,missing,bar 1,scored,0,9981.0,293.0,1532.0,0.0,0.7386069335826346,0.7853396149763596,0.6841292551382081
+chronos-bolt-base,closed markets,missing,bar 2,scored,0,9991.0,294.0,1534.0,0.0,0.5510059613475896,0.8768715032494295,0.6809572514148913
+chronos-bolt-base,closed markets,missing,night,scored,0,19906.0,193.0,2212.0,0.0,0.9204004192955465,0.781418554448465,0.7792819688727205
+chronos-bolt-base,closed markets,missing,weekend,scored,0,9307.0,119.0,891.0,0.0,1.2635262168425447,0.8093707583406007,0.566135045562082
+chronos-bolt-base,closed markets,missing,other,scored,0,555.0,18.0,89.0,0.0,1.048009313978949,0.8606938215802595,0.7112955565747199
+chronos-bolt-base,closed markets,benchmark input,all,scored,0,29768.0,294.0,3074.0,0.0,0.8427320294298034,0.7662300396394098,0.0
+chronos-bolt-base,closed markets,benchmark input,bar 0,scored,0,9796.0,293.0,1527.0,0.0,1.2826792373806715,0.5848014219444403,0.0
+chronos-bolt-base,closed markets,benchmark input,bar 1,scored,0,9981.0,293.0,1532.0,0.0,0.6697727374824147,0.8286184842143736,0.0
+chronos-bolt-base,closed markets,benchmark input,bar 2,scored,0,9991.0,294.0,1534.0,0.0,0.5448922659035397,0.8950727356006968,0.0
+chronos-bolt-base,closed markets,benchmark input,night,scored,0,19906.0,193.0,2212.0,0.0,0.8082783835148108,0.7724524042364362,0.0
+chronos-bolt-base,closed markets,benchmark input,weekend,scored,0,9307.0,119.0,891.0,0.0,0.9167478852741378,0.7521587920269631,0.0
+chronos-bolt-base,closed markets,benchmark input,other,scored,0,555.0,18.0,89.0,0.0,0.8653503457385416,0.7611348041835515,0.0
+chronos-bolt-base,"crypto, weekends cut",trading hours only,all,scored,0,1165.0,49.0,146.0,0.0,1.839498498308907,0.6446185617103984,0.0
+chronos-bolt-base,"crypto, weekends cut",trading hours only,bar 0,scored,0,381.0,48.0,48.0,0.0,4.333223777725603,0.21763392857142858,0.0
+chronos-bolt-base,"crypto, weekends cut",trading hours only,bar 1,scored,0,392.0,49.0,49.0,0.0,0.6827966242574318,0.8494897959183674,0.0
+chronos-bolt-base,"crypto, weekends cut",trading hours only,bar 2,scored,0,392.0,49.0,49.0,0.0,0.5774511798479721,0.8520408163265306,0.0
+chronos-bolt-base,"crypto, weekends cut",trading hours only,weekend,scored,0,1165.0,49.0,146.0,0.0,1.839498498308907,0.6446185617103984,0.0
+chronos-bolt-base,"crypto, weekends cut",forward-filled,all,scored,0,1165.0,49.0,146.0,3.0,1.912907130776268,0.564139941690962,0.29490194515306123
+chronos-bolt-base,"crypto, weekends cut",forward-filled,bar 0,scored,0,381.0,48.0,48.0,3.0,4.515336689913163,0.1209077380952381,0.296875
+chronos-bolt-base,"crypto, weekends cut",forward-filled,bar 1,scored,0,392.0,49.0,49.0,0.0,0.7141687571393266,0.8137755102040817,0.294921875
+chronos-bolt-base,"crypto, weekends cut",forward-filled,bar 2,scored,0,392.0,49.0,49.0,0.0,0.5907376031868926,0.7397959183673469,0.29296875
+chronos-bolt-base,"crypto, weekends cut",forward-filled,weekend,scored,0,1165.0,49.0,146.0,3.0,1.912907130776268,0.564139941690962,0.29490194515306123
+chronos-bolt-base,"crypto, weekends cut",missing,all,scored,0,1165.0,49.0,146.0,0.0,1.900863044015287,0.7158649173955297,0.29490194515306123
+chronos-bolt-base,"crypto, weekends cut",missing,bar 0,scored,0,381.0,48.0,48.0,0.0,4.392325068864259,0.4840029761904762,0.296875
+chronos-bolt-base,"crypto, weekends cut",missing,bar 1,scored,0,392.0,49.0,49.0,0.0,0.7049093791869722,0.8392857142857143,0.294921875
+chronos-bolt-base,"crypto, weekends cut",missing,bar 2,scored,0,392.0,49.0,49.0,0.0,0.6816952392535678,0.8137755102040817,0.29296875
+chronos-bolt-base,"crypto, weekends cut",missing,weekend,scored,0,1165.0,49.0,146.0,0.0,1.900863044015287,0.7158649173955297,0.29490194515306123
+chronos-bolt-base,"crypto, weekends cut",benchmark input,all,scored,0,1165.0,49.0,146.0,0.0,1.855759101451712,0.6562196307094267,0.0
+chronos-bolt-base,"crypto, weekends cut",benchmark input,bar 0,scored,0,381.0,48.0,48.0,0.0,4.341849317510334,0.2232142857142857,0.0
+chronos-bolt-base,"crypto, weekends cut",benchmark input,bar 1,scored,0,392.0,49.0,49.0,0.0,0.7077227447684667,0.8724489795918368,0.0
+chronos-bolt-base,"crypto, weekends cut",benchmark input,bar 2,scored,0,392.0,49.0,49.0,0.0,0.593252042839806,0.8571428571428571,0.0
+chronos-bolt-base,"crypto, weekends cut",benchmark input,weekend,scored,0,1165.0,49.0,146.0,0.0,1.855759101451712,0.6562196307094267,0.0
+chronos-2,closed markets,trading hours only,all,scored,0,212.0,2.0,23.0,3.0,0.7672714731972058,0.7532121287803106,0.0
+chronos-2,closed markets,trading hours only,bar 0,scored,0,66.0,2.0,11.0,0.0,1.132979929738261,0.6678282828282829,0.0
+chronos-2,closed markets,trading hours only,bar 1,scored,0,73.0,2.0,12.0,1.0,0.9066635247756444,0.5743686868686868,0.0
+chronos-2,closed markets,trading hours only,bar 2,scored,0,73.0,2.0,12.0,2.0,0.5717005268685179,0.8098484848484848,0.0
+chronos-2,closed markets,trading hours only,night,scored,0,201.0,2.0,22.0,3.0,0.7630426093546399,0.7393185980685981,0.0
+chronos-2,closed markets,trading hours only,other,scored,0,11.0,1.0,3.0,0.0,0.936566686685214,0.7666666666666666,0.0
+chronos-2,closed markets,forward-filled,all,scored,0,212.0,2.0,23.0,10.0,0.80982259410549,0.44788812828585556,0.7633209120425029
+chronos-2,closed markets,forward-filled,bar 0,scored,0,66.0,2.0,11.0,7.0,1.2826250977876406,0.25363636363636366,0.7502849786931818
+chronos-2,closed markets,forward-filled,bar 1,scored,0,73.0,2.0,12.0,2.0,0.8514014997826181,0.42859848484848484,0.7530746922348486
+chronos-2,closed markets,forward-filled,bar 2,scored,0,73.0,2.0,12.0,1.0,0.5277736603790215,0.6116161616161615,0.7572576349431819
+chronos-2,closed markets,forward-filled,night,scored,0,201.0,2.0,22.0,6.0,0.8057751792931693,0.4352543983793984,0.7703929371409839
+chronos-2,closed markets,forward-filled,other,scored,0,11.0,1.0,3.0,4.0,0.9736896156888415,0.3666666666666667,0.7184244791666666
+chronos-2,closed markets,missing,all,scored,0,212.0,2.0,23.0,0.0,0.873218031809128,0.7205282879998789,0.7633209120425029
+chronos-2,closed markets,missing,bar 0,scored,0,66.0,2.0,11.0,0.0,1.3014809039469064,0.7696464646464647,0.7502849786931818
+chronos-2,closed markets,missing,bar 1,scored,0,73.0,2.0,12.0,0.0,1.0551130648908702,0.6122790404040404,0.7530746922348486
+chronos-2,closed markets,missing,bar 2,scored,0,73.0,2.0,12.0,0.0,0.5877955645550981,0.7299242424242424,0.7572576349431819
+chronos-2,closed markets,missing,night,scored,0,201.0,2.0,22.0,0.0,0.8985996608682909,0.7095322385947387,0.7703929371409839
+chronos-2,closed markets,missing,other,scored,0,11.0,1.0,3.0,0.0,0.6057417020586776,0.9166666666666666,0.7184244791666666
+chronos-2,closed markets,benchmark input,all,scored,0,212.0,2.0,23.0,0.0,0.7473932648224777,0.7867597364756456,0.0
+chronos-2,closed markets,benchmark input,bar 0,scored,0,66.0,2.0,11.0,0.0,1.149546910435656,0.7111616161616161,0.0
+chronos-2,closed markets,benchmark input,bar 1,scored,0,73.0,2.0,12.0,0.0,0.8411488929724189,0.6354166666666667,0.0
+chronos-2,closed markets,benchmark input,bar 2,scored,0,73.0,2.0,12.0,0.0,0.5004983257882327,0.9000000000000001,0.0
+chronos-2,closed markets,benchmark input,night,scored,0,201.0,2.0,22.0,0.0,0.7397115638119514,0.7855879537129538,0.0
+chronos-2,closed markets,benchmark input,other,scored,0,11.0,1.0,3.0,0.0,0.9229585373352989,0.7666666666666666,0.0
+chronos-2,"crypto, weekends cut",trading hours only,all,not scored: no decision after its scoring start,0,0.0,,,,,,
+chronos-2,"crypto, weekends cut",forward-filled,all,not scored: no decision after its scoring start,0,0.0,,,,,,
+chronos-2,"crypto, weekends cut",missing,all,not scored: no decision after its scoring start,0,0.0,,,,,,
+chronos-2,"crypto, weekends cut",benchmark input,all,not scored: no decision after its scoring start,0,0.0,,,,,,
+timesfm-2.5,closed markets,trading hours only,all,scored,0,5496.0,52.0,559.0,0.0,0.8561186104916904,0.7863341150742168,0.0
+timesfm-2.5,closed markets,trading hours only,bar 0,scored,0,1830.0,52.0,276.0,0.0,1.3059447824616928,0.6151246323121323,0.0
+timesfm-2.5,closed markets,trading hours only,bar 1,scored,0,1833.0,52.0,278.0,0.0,0.6796842190505994,0.8525545634920634,0.0
+timesfm-2.5,closed markets,trading hours only,bar 2,scored,0,1833.0,52.0,278.0,0.0,0.5340903656595285,0.918588702963703,0.0
+timesfm-2.5,closed markets,trading hours only,night,scored,0,3849.0,36.0,417.0,0.0,0.8025451795710962,0.7957248866103033,0.0
+timesfm-2.5,closed markets,trading hours only,weekend,scored,0,1593.0,19.0,147.0,0.0,0.9404134725390793,0.771915574750327,0.0
+timesfm-2.5,closed markets,trading hours only,other,scored,0,54.0,4.0,12.0,0.0,1.1728782625045129,0.7833333333333333,0.0
+timesfm-2.5,closed markets,forward-filled,all,scored,0,5496.0,52.0,559.0,0.0,0.9319627013534681,0.3569167426810243,0.6944916612914293
+timesfm-2.5,closed markets,forward-filled,bar 0,scored,0,1830.0,52.0,276.0,0.0,1.5065230577210367,0.1005938505938506,0.687814216897469
+timesfm-2.5,closed markets,forward-filled,bar 1,scored,0,1833.0,52.0,278.0,0.0,0.7079227326561053,0.46280334249084254,0.6862407130900785
+timesfm-2.5,closed markets,forward-filled,bar 2,scored,0,1833.0,52.0,278.0,0.0,0.5189797869868706,0.5412733678358678,0.6843158173297336
+timesfm-2.5,closed markets,forward-filled,night,scored,0,3849.0,36.0,417.0,0.0,0.8734083789961583,0.33767632830132827,0.776237608480447
+timesfm-2.5,closed markets,forward-filled,weekend,scored,0,1593.0,19.0,147.0,0.0,1.0235698314255621,0.4045198083220529,0.5564803488460223
+timesfm-2.5,closed markets,forward-filled,other,scored,0,54.0,4.0,12.0,0.0,1.200721174172596,0.4055555555555555,0.7482421875
+timesfm-2.5,closed markets,missing,all,"not applicable: TimesFM 2.5 fills NaN by linear interpolation inside forecast() (timesfm_2p5_base.linear_interpolation), so the model sees interpolated prices",0,,,,,,,
+timesfm-2.5,closed markets,benchmark input,all,scored,0,5496.0,52.0,559.0,0.0,0.8427073738781404,0.8012607329667568,0.0
+timesfm-2.5,closed markets,benchmark input,bar 0,scored,0,1830.0,52.0,276.0,0.0,1.3017048953966794,0.6320521492396493,0.0
+timesfm-2.5,closed markets,benchmark input,bar 1,scored,0,1833.0,52.0,278.0,0.0,0.6599679110144959,0.8576813811188809,0.0
+timesfm-2.5,closed markets,benchmark input,bar 2,scored,0,1833.0,52.0,278.0,0.0,0.5189263060336069,0.9350488053613053,0.0
+timesfm-2.5,closed markets,benchmark input,night,scored,0,3849.0,36.0,417.0,0.0,0.7862381613258461,0.8147325571804738,0.0
+timesfm-2.5,closed markets,benchmark input,weekend,scored,0,1593.0,19.0,147.0,0.0,0.9315910577669967,0.7824498267899971,0.0
+timesfm-2.5,closed markets,benchmark input,other,scored,0,54.0,4.0,12.0,0.0,1.1381003515813017,0.7722222222222223,0.0
+timesfm-2.5,"crypto, weekends cut",trading hours only,all,scored,0,192.0,8.0,24.0,0.0,1.5180855889578708,0.671875,0.0
+timesfm-2.5,"crypto, weekends cut",trading hours only,bar 0,scored,0,64.0,8.0,8.0,0.0,3.501567736561672,0.140625,0.0
+timesfm-2.5,"crypto, weekends cut",trading hours only,bar 1,scored,0,64.0,8.0,8.0,0.0,0.4922120340609464,0.984375,0.0
+timesfm-2.5,"crypto, weekends cut",trading hours only,bar 2,scored,0,64.0,8.0,8.0,0.0,0.5604769962509937,0.890625,0.0
+timesfm-2.5,"crypto, weekends cut",trading hours only,weekend,scored,0,192.0,8.0,24.0,0.0,1.5180855889578708,0.671875,0.0
+timesfm-2.5,"crypto, weekends cut",forward-filled,all,scored,0,192.0,8.0,24.0,0.0,1.5735235195786434,0.5416666666666666,0.294921875
+timesfm-2.5,"crypto, weekends cut",forward-filled,bar 0,scored,0,64.0,8.0,8.0,0.0,3.7924588158406776,0.0,0.296875
+timesfm-2.5,"crypto, weekends cut",forward-filled,bar 1,scored,0,64.0,8.0,8.0,0.0,0.42151680494464694,0.953125,0.294921875
+timesfm-2.5,"crypto, weekends cut",forward-filled,bar 2,scored,0,64.0,8.0,8.0,0.0,0.5065949379506057,0.671875,0.29296875
+timesfm-2.5,"crypto, weekends cut",forward-filled,weekend,scored,0,192.0,8.0,24.0,0.0,1.5735235195786434,0.5416666666666666,0.294921875
+timesfm-2.5,"crypto, weekends cut",missing,all,"not applicable: TimesFM 2.5 fills NaN by linear interpolation inside forecast() (timesfm_2p5_base.linear_interpolation), so the model sees interpolated prices",0,,,,,,,
+timesfm-2.5,"crypto, weekends cut",benchmark input,all,scored,0,192.0,8.0,24.0,0.0,1.5089818977791598,0.671875,0.0
+timesfm-2.5,"crypto, weekends cut",benchmark input,bar 0,scored,0,64.0,8.0,8.0,0.0,3.498195285712118,0.140625,0.0
+timesfm-2.5,"crypto, weekends cut",benchmark input,bar 1,scored,0,64.0,8.0,8.0,0.0,0.4709599551890832,0.984375,0.0
+timesfm-2.5,"crypto, weekends cut",benchmark input,bar 2,scored,0,64.0,8.0,8.0,0.0,0.5577904524362789,0.890625,0.0
+timesfm-2.5,"crypto, weekends cut",benchmark input,weekend,scored,0,192.0,8.0,24.0,0.0,1.5089818977791598,0.671875,0.0
+timesfm-3,closed markets,trading hours only,all,not scored: released after the scored folds,0,,,,,,,
+timesfm-3,closed markets,forward-filled,all,not scored: released after the scored folds,0,,,,,,,
+timesfm-3,closed markets,missing,all,not scored: released after the scored folds,0,,,,,,,
+timesfm-3,closed markets,benchmark input,all,not scored: released after the scored folds,0,,,,,,,
+timesfm-3,"crypto, weekends cut",trading hours only,all,not scored: released after the scored folds,0,,,,,,,
+timesfm-3,"crypto, weekends cut",forward-filled,all,not scored: released after the scored folds,0,,,,,,,
+timesfm-3,"crypto, weekends cut",missing,all,not scored: released after the scored folds,0,,,,,,,
+timesfm-3,"crypto, weekends cut",benchmark input,all,not scored: released after the scored folds,0,,,,,,,
+tirex-1.1,closed markets,trading hours only,all,scored,0,12389.0,137.0,1430.0,0.0,0.7650684046964993,0.7189899872008505,0.0
+tirex-1.1,closed markets,trading hours only,bar 0,scored,0,3030.0,137.0,667.0,0.0,1.1878391668445227,0.5057872193364895,0.0
+tirex-1.1,closed markets,trading hours only,bar 1,scored,0,4668.0,137.0,722.0,0.0,0.6345456527543251,0.7729257293125905,0.0
+tirex-1.1,closed markets,trading hours only,bar 2,scored,0,4691.0,137.0,722.0,0.0,0.47659611926739087,0.8645670293480513,0.0
+tirex-1.1,closed markets,trading hours only,night,scored,0,8972.0,92.0,1065.0,0.0,0.787751725645741,0.711814526602076,0.0
+tirex-1.1,closed markets,trading hours only,weekend,scored,0,3295.0,54.0,380.0,0.0,0.6932025465833809,0.7294930547024756,0.0
+tirex-1.1,closed markets,trading hours only,other,scored,0,122.0,8.0,30.0,0.0,1.0208244114598997,0.6844907407407407,0.0
+tirex-1.1,closed markets,forward-filled,all,scored,0,12389.0,137.0,1430.0,1818.0,0.843579489534653,0.3352556240279324,0.6922098180488254
+tirex-1.1,closed markets,forward-filled,bar 0,scored,0,3030.0,137.0,667.0,1703.0,1.364033305088806,0.0612580410938075,0.6896153625387416
+tirex-1.1,closed markets,forward-filled,bar 1,scored,0,4668.0,137.0,722.0,69.0,0.681398711706932,0.42473760897118557,0.6837944656466198
+tirex-1.1,closed markets,forward-filled,bar 2,scored,0,4691.0,137.0,722.0,46.0,0.49297879538753503,0.5104745096077212,0.6818406763857373
+tirex-1.1,closed markets,forward-filled,night,scored,0,8972.0,92.0,1065.0,739.0,0.8698252087200468,0.31373675256086325,0.7768671966448598
+tirex-1.1,closed markets,forward-filled,weekend,scored,0,3295.0,54.0,380.0,1054.0,0.7628605505800364,0.38219973331062346,0.5633101347786601
+tirex-1.1,closed markets,forward-filled,other,scored,0,122.0,8.0,30.0,25.0,1.0937358478503272,0.34675925925925927,0.7433417426215277
+tirex-1.1,closed markets,missing,all,scored,0,12389.0,137.0,1430.0,0.0,1.0090547789053987,0.7641946860756038,0.6922098180488254
+tirex-1.1,closed markets,missing,bar 0,scored,0,3030.0,137.0,667.0,0.0,1.7133090982087031,0.7703140141826272,0.6896153625387416
+tirex-1.1,closed markets,missing,bar 1,scored,0,4668.0,137.0,722.0,0.0,0.7687720149267039,0.7547115006512817,0.6837944656466198
+tirex-1.1,closed markets,missing,bar 2,scored,0,4691.0,137.0,722.0,0.0,0.5645177030430086,0.7880514828507529,0.6818406763857373
+tirex-1.1,closed markets,missing,night,scored,0,8972.0,92.0,1065.0,0.0,1.0275038858546253,0.7611625598545068,0.7768671966448598
+tirex-1.1,closed markets,missing,weekend,scored,0,3295.0,54.0,380.0,0.0,0.9335952839578917,0.7589145339127127,0.5633101347786601
+tirex-1.1,closed markets,missing,other,scored,0,122.0,8.0,30.0,0.0,1.1274905360912042,0.7472222222222222,0.7433417426215277
+tirex-1.1,closed markets,benchmark input,all,scored,0,12389.0,137.0,1430.0,0.0,0.7556153093877879,0.7273959937730863,0.0
+tirex-1.1,closed markets,benchmark input,bar 0,scored,0,3030.0,137.0,667.0,0.0,1.1786503039965013,0.525231832576723,0.0
+tirex-1.1,closed markets,benchmark input,bar 1,scored,0,4668.0,137.0,722.0,0.0,0.6242357970415897,0.7730630119407492,0.0
+tirex-1.1,closed markets,benchmark input,bar 2,scored,0,4691.0,137.0,722.0,0.0,0.47054404172307485,0.8693359340713355,0.0
+tirex-1.1,closed markets,benchmark input,night,scored,0,8972.0,92.0,1065.0,0.0,0.77730134829877,0.7221750836677959,0.0
+tirex-1.1,closed markets,benchmark input,weekend,scored,0,3295.0,54.0,380.0,0.0,0.6850219640810641,0.7467186105280019,0.0
+tirex-1.1,closed markets,benchmark input,other,scored,0,122.0,8.0,30.0,0.0,1.0125402415034572,0.705324074074074,0.0
+tirex-1.1,"crypto, weekends cut",trading hours only,all,scored,0,414.0,23.0,63.0,0.0,1.0660357282208879,0.6778381642512077,0.0
+tirex-1.1,"crypto, weekends cut",trading hours only,bar 0,scored,0,50.0,17.0,17.0,0.0,2.677217342539607,0.1792717086834734,0.0
+tirex-1.1,"crypto, weekends cut",trading hours only,bar 1,scored,0,181.0,23.0,23.0,0.0,0.5120906345832477,0.8913043478260869,0.0
+tirex-1.1,"crypto, weekends cut",trading hours only,bar 2,scored,0,183.0,23.0,23.0,0.0,0.5988870769068587,0.7624223602484471,0.0
+tirex-1.1,"crypto, weekends cut",trading hours only,weekend,scored,0,414.0,23.0,63.0,0.0,1.0660357282208879,0.6778381642512077,0.0
+tirex-1.1,"crypto, weekends cut",forward-filled,all,scored,0,414.0,23.0,63.0,130.0,1.1324348170018268,0.48667184265010355,0.2946671195652174
+tirex-1.1,"crypto, weekends cut",forward-filled,bar 0,scored,0,50.0,17.0,17.0,126.0,2.9209996547319426,0.008403361344537815,0.296875
+tirex-1.1,"crypto, weekends cut",forward-filled,bar 1,scored,0,181.0,23.0,23.0,3.0,0.508684017681063,0.7476708074534162,0.294921875
+tirex-1.1,"crypto, weekends cut",forward-filled,bar 2,scored,0,183.0,23.0,23.0,1.0,0.6184958949728597,0.5108695652173914,0.29296875
+tirex-1.1,"crypto, weekends cut",forward-filled,weekend,scored,0,414.0,23.0,63.0,130.0,1.1324348170018268,0.48667184265010355,0.2946671195652174
+tirex-1.1,"crypto, weekends cut",missing,all,scored,0,414.0,23.0,63.0,0.0,1.0401367720396353,0.8159506556245688,0.2946671195652174
+tirex-1.1,"crypto, weekends cut",missing,bar 0,scored,0,50.0,17.0,17.0,0.0,2.6246159519479177,0.8627450980392156,0.296875
+tirex-1.1,"crypto, weekends cut",missing,bar 1,scored,0,181.0,23.0,23.0,0.0,0.45829647923707717,0.8796583850931677,0.294921875
+tirex-1.1,"crypto, weekends cut",missing,bar 2,scored,0,183.0,23.0,23.0,0.0,0.6077993363322525,0.7080745341614907,0.29296875
+tirex-1.1,"crypto, weekends cut",missing,weekend,scored,0,414.0,23.0,63.0,0.0,1.0401367720396353,0.8159506556245688,0.2946671195652174
+tirex-1.1,"crypto, weekends cut",benchmark input,all,scored,0,414.0,23.0,63.0,0.0,1.0486265848205636,0.6914251207729468,0.0
+tirex-1.1,"crypto, weekends cut",benchmark input,bar 0,scored,0,50.0,17.0,17.0,0.0,2.6618380176995835,0.1792717086834734,0.0
+tirex-1.1,"crypto, weekends cut",benchmark input,bar 1,scored,0,181.0,23.0,23.0,0.0,0.48664725918520413,0.907608695652174,0.0
+tirex-1.1,"crypto, weekends cut",benchmark input,bar 2,scored,0,183.0,23.0,23.0,0.0,0.5861614628211205,0.7841614906832298,0.0
+tirex-1.1,"crypto, weekends cut",benchmark input,weekend,scored,0,414.0,23.0,63.0,0.0,1.0486265848205636,0.6914251207729468,0.0
+tirex-2,closed markets,trading hours only,all,not scored: released after the scored folds,0,,,,,,,
+tirex-2,closed markets,forward-filled,all,not scored: released after the scored folds,0,,,,,,,
+tirex-2,closed markets,missing,all,not scored: released after the scored folds,0,,,,,,,
+tirex-2,closed markets,benchmark input,all,not scored: released after the scored folds,0,,,,,,,
+tirex-2,"crypto, weekends cut",trading hours only,all,not scored: released after the scored folds,0,,,,,,,
+tirex-2,"crypto, weekends cut",forward-filled,all,not scored: released after the scored folds,0,,,,,,,
+tirex-2,"crypto, weekends cut",missing,all,not scored: released after the scored folds,0,,,,,,,
+tirex-2,"crypto, weekends cut",benchmark input,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-22m,closed markets,trading hours only,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-22m,closed markets,forward-filled,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-22m,closed markets,missing,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-22m,closed markets,benchmark input,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-22m,"crypto, weekends cut",trading hours only,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-22m,"crypto, weekends cut",forward-filled,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-22m,"crypto, weekends cut",missing,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-22m,"crypto, weekends cut",benchmark input,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-313m,closed markets,trading hours only,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-313m,closed markets,forward-filled,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-313m,closed markets,missing,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-313m,closed markets,benchmark input,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-313m,"crypto, weekends cut",trading hours only,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-313m,"crypto, weekends cut",forward-filled,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-313m,"crypto, weekends cut",missing,all,not scored: released after the scored folds,0,,,,,,,
+toto-2-313m,"crypto, weekends cut",benchmark input,all,not scored: released after the scored folds,0,,,,,,,
+t0-gamma,closed markets,trading hours only,all,not scored: released after the scored folds,0,,,,,,,
+t0-gamma,closed markets,forward-filled,all,not scored: released after the scored folds,0,,,,,,,
+t0-gamma,closed markets,missing,all,not scored: released after the scored folds,0,,,,,,,
+t0-gamma,closed markets,benchmark input,all,not scored: released after the scored folds,0,,,,,,,
+t0-gamma,"crypto, weekends cut",trading hours only,all,not scored: released after the scored folds,0,,,,,,,
+t0-gamma,"crypto, weekends cut",forward-filled,all,not scored: released after the scored folds,0,,,,,,,
+t0-gamma,"crypto, weekends cut",missing,all,not scored: released after the scored folds,0,,,,,,,
+t0-gamma,"crypto, weekends cut",benchmark input,all,not scored: released after the scored folds,0,,,,,,,
+moirai-2-small,closed markets,trading hours only,all,scored,0,6012.0,75.0,762.0,49.0,0.7699795232211802,0.7481617120594244,0.0
+moirai-2-small,closed markets,trading hours only,bar 0,scored,0,1277.0,74.0,344.0,23.0,1.2725632565777445,0.5460113847613847,0.0
+moirai-2-small,closed markets,trading hours only,bar 1,scored,0,2356.0,75.0,397.0,15.0,0.6651221884698971,0.7782496047162715,0.0
+moirai-2-small,closed markets,trading hours only,bar 2,scored,0,2379.0,75.0,396.0,11.0,0.5245566503799654,0.8750123783623784,0.0
+moirai-2-small,closed markets,trading hours only,night,scored,0,4368.0,51.0,580.0,42.0,0.7702354004364059,0.745935999834544,0.0
+moirai-2-small,closed markets,trading hours only,weekend,scored,0,1604.0,29.0,191.0,7.0,0.7574332435103582,0.7588683142790649,0.0
+moirai-2-small,closed markets,trading hours only,other,scored,0,40.0,4.0,11.0,0.0,0.6651889961857061,0.8722222222222222,0.0
+moirai-2-small,closed markets,forward-filled,all,scored,0,6012.0,75.0,762.0,1519.0,0.8256478834345928,0.3389484512356838,0.6909052309124121
+moirai-2-small,closed markets,forward-filled,bar 0,scored,0,1277.0,74.0,344.0,1050.0,1.4172677207736886,0.1380897455897456,0.6922447336522043
+moirai-2-small,closed markets,forward-filled,bar 1,scored,0,2356.0,75.0,397.0,244.0,0.6944464631099908,0.384778305028305,0.6824914575128769
+moirai-2-small,closed markets,forward-filled,bar 2,scored,0,2379.0,75.0,396.0,225.0,0.537598150609871,0.4530736047902714,0.6804979165100911
+moirai-2-small,closed markets,forward-filled,night,scored,0,4368.0,51.0,580.0,1000.0,0.8348782781844912,0.30011491634671966,0.7745252105205904
+moirai-2-small,closed markets,forward-filled,weekend,scored,0,1604.0,29.0,191.0,507.0,0.7928443656941903,0.4114890704888359,0.5615809426538962
+moirai-2-small,closed markets,forward-filled,other,scored,0,40.0,4.0,11.0,12.0,0.6035343438206339,0.5006944444444444,0.7502034505208335
+moirai-2-small,closed markets,missing,all,scored,0,6012.0,75.0,762.0,513.0,36.37590364993243,0.525928313396518,0.6909052309124121
+moirai-2-small,closed markets,missing,bar 0,scored,0,1277.0,74.0,344.0,513.0,117.95024584694538,0.0,0.6922447336522043
+moirai-2-small,closed markets,missing,bar 1,scored,0,2356.0,75.0,397.0,0.0,13.65523556719003,0.6361506882006882,0.6824914575128769
+moirai-2-small,closed markets,missing,bar 2,scored,0,2379.0,75.0,396.0,0.0,7.8825432227693515,0.793912490595824,0.6804979165100911
+moirai-2-small,closed markets,missing,night,scored,0,4368.0,51.0,580.0,154.0,36.26880713534044,0.5654344516231771,0.7745252105205904
+moirai-2-small,closed markets,missing,weekend,scored,0,1604.0,29.0,191.0,354.0,36.165667036584274,0.4929597625425017,0.5615809426538962
+moirai-2-small,closed markets,missing,other,scored,0,40.0,4.0,11.0,5.0,33.00464504835672,0.5409722222222222,0.7502034505208335
+moirai-2-small,closed markets,benchmark input,all,scored,0,6010.0,75.0,762.0,7.0,0.767243078007287,0.7471661137458399,0.0
+moirai-2-small,closed markets,benchmark input,bar 0,scored,0,1276.0,74.0,344.0,3.0,1.2766700488885443,0.5607950320450321,0.0
+moirai-2-small,closed markets,benchmark input,bar 1,scored,0,2356.0,75.0,397.0,0.0,0.6607744058672004,0.7674493759327092,0.0
+moirai-2-small,closed markets,benchmark input,bar 2,scored,0,2378.0,75.0,396.0,4.0,0.5260016179938396,0.8624953632786967,0.0
+moirai-2-small,closed markets,benchmark input,night,scored,0,4366.0,51.0,580.0,7.0,0.7701946098468008,0.7409451746290725,0.0
+moirai-2-small,closed markets,benchmark input,weekend,scored,0,1604.0,29.0,191.0,0.0,0.7452265999355077,0.7590579723545473,0.0
+moirai-2-small,closed markets,benchmark input,other,scored,0,40.0,4.0,11.0,0.0,0.581112458222399,0.85,0.0
+moirai-2-small,"crypto, weekends cut",trading hours only,all,scored,0,236.0,12.0,36.0,2.0,1.6099474829660325,0.5698743386243387,0.0
+moirai-2-small,"crypto, weekends cut",trading hours only,bar 0,scored,0,49.0,12.0,12.0,1.0,3.4213900521115357,0.20515873015873018,0.0
+moirai-2-small,"crypto, weekends cut",trading hours only,bar 1,scored,0,93.0,12.0,12.0,1.0,0.6460656196379008,0.8422619047619048,0.0
+moirai-2-small,"crypto, weekends cut",trading hours only,bar 2,scored,0,94.0,12.0,12.0,0.0,0.7623867771486618,0.6622023809523809,0.0
+moirai-2-small,"crypto, weekends cut",trading hours only,weekend,scored,0,236.0,12.0,36.0,2.0,1.6099474829660325,0.5698743386243387,0.0
+moirai-2-small,"crypto, weekends cut",forward-filled,all,scored,0,236.0,12.0,36.0,36.0,1.6455758042093709,0.43402777777777773,0.294921875
+moirai-2-small,"crypto, weekends cut",forward-filled,bar 0,scored,0,49.0,12.0,12.0,32.0,3.5839047289942325,0.041666666666666664,0.296875
+moirai-2-small,"crypto, weekends cut",forward-filled,bar 1,scored,0,93.0,12.0,12.0,2.0,0.5872710060574887,0.7693452380952381,0.294921875
+moirai-2-small,"crypto, weekends cut",forward-filled,bar 2,scored,0,94.0,12.0,12.0,2.0,0.7655516775763899,0.49107142857142855,0.29296875
+moirai-2-small,"crypto, weekends cut",forward-filled,weekend,scored,0,236.0,12.0,36.0,36.0,1.6455758042093709,0.43402777777777773,0.294921875
+moirai-2-small,"crypto, weekends cut",missing,all,scored,0,236.0,12.0,36.0,15.0,74.34971958009466,0.625,0.294921875
+moirai-2-small,"crypto, weekends cut",missing,bar 0,scored,0,49.0,12.0,12.0,15.0,211.23420375033695,0.0,0.296875
+moirai-2-small,"crypto, weekends cut",missing,bar 1,scored,0,93.0,12.0,12.0,0.0,7.406400144872049,0.9583333333333334,0.294921875
+moirai-2-small,"crypto, weekends cut",missing,bar 2,scored,0,94.0,12.0,12.0,0.0,4.408554845074968,0.9166666666666666,0.29296875
+moirai-2-small,"crypto, weekends cut",missing,weekend,scored,0,236.0,12.0,36.0,15.0,74.34971958009466,0.625,0.294921875
+moirai-2-small,"crypto, weekends cut",benchmark input,all,scored,0,236.0,12.0,36.0,1.0,1.5556545644787219,0.6026124338624339,0.0
+moirai-2-small,"crypto, weekends cut",benchmark input,bar 0,scored,0,49.0,12.0,12.0,1.0,3.334232244026785,0.2468253968253968,0.0
+moirai-2-small,"crypto, weekends cut",benchmark input,bar 1,scored,0,93.0,12.0,12.0,0.0,0.5514438548882837,0.8854166666666666,0.0
+moirai-2-small,"crypto, weekends cut",benchmark input,bar 2,scored,0,94.0,12.0,12.0,0.0,0.7812875945210963,0.6755952380952381,0.0
+moirai-2-small,"crypto, weekends cut",benchmark input,weekend,scored,0,236.0,12.0,36.0,1.0,1.5556545644787219,0.6026124338624339,0.0
+ewma-normal,closed markets,trading hours only,all,scored,0,32118.0,313.0,3285.0,0.0,0.780653354520649,0.7789052309912775,0.0
+ewma-normal,closed markets,trading hours only,bar 0,scored,0,10706.0,313.0,1638.0,0.0,1.2314749181314164,0.59335332161939,0.0
+ewma-normal,closed markets,trading hours only,bar 1,scored,0,10706.0,313.0,1639.0,0.0,0.6104506667788172,0.8256978500419583,0.0
+ewma-normal,closed markets,trading hours only,bar 2,scored,0,10706.0,313.0,1639.0,0.0,0.4735056668853645,0.9094420652311557,0.0
+ewma-normal,closed markets,trading hours only,night,scored,0,21477.0,206.0,2367.0,0.0,0.7465099756688466,0.7875906339153802,0.0
+ewma-normal,closed markets,trading hours only,weekend,scored,0,10083.0,127.0,952.0,0.0,0.8494388539075044,0.7612600586464721,0.0
+ewma-normal,closed markets,trading hours only,other,scored,0,558.0,18.0,89.0,0.0,0.8205166366347353,0.768486674505193,0.0
+ewma-normal,closed markets,forward-filled,all,scored,0,32118.0,313.0,3285.0,0.0,0.780653354520649,0.7789052309912775,0.6902315745079931
+ewma-normal,closed markets,forward-filled,bar 0,scored,0,10706.0,313.0,1638.0,0.0,1.2314749181314164,0.59335332161939,0.6845942640072458
+ewma-normal,closed markets,forward-filled,bar 1,scored,0,10706.0,313.0,1639.0,0.0,0.6104506667788172,0.8256978500419583,0.6826843729375325
+ewma-normal,closed markets,forward-filled,bar 2,scored,0,10706.0,313.0,1639.0,0.0,0.4735056668853645,0.9094420652311557,0.6807557939354182
+ewma-normal,closed markets,forward-filled,night,scored,0,21477.0,206.0,2367.0,0.0,0.7465099756688466,0.7875906339153802,0.7790912748418624
+ewma-normal,closed markets,forward-filled,weekend,scored,0,10083.0,127.0,952.0,0.0,0.8494388539075044,0.7612600586464721,0.5662161815503733
+ewma-normal,closed markets,forward-filled,other,scored,0,558.0,18.0,89.0,0.0,0.8205166366347353,0.768486674505193,0.7112781023010808
+ewma-normal,closed markets,missing,all,scored,0,32118.0,313.0,3285.0,0.0,0.780653354520649,0.7789052309912775,0.6902315745079931
+ewma-normal,closed markets,missing,bar 0,scored,0,10706.0,313.0,1638.0,0.0,1.2314749181314164,0.59335332161939,0.6845942640072458
+ewma-normal,closed markets,missing,bar 1,scored,0,10706.0,313.0,1639.0,0.0,0.6104506667788172,0.8256978500419583,0.6826843729375325
+ewma-normal,closed markets,missing,bar 2,scored,0,10706.0,313.0,1639.0,0.0,0.4735056668853645,0.9094420652311557,0.6807557939354182
+ewma-normal,closed markets,missing,night,scored,0,21477.0,206.0,2367.0,0.0,0.7465099756688466,0.7875906339153802,0.7790912748418624
+ewma-normal,closed markets,missing,weekend,scored,0,10083.0,127.0,952.0,0.0,0.8494388539075044,0.7612600586464721,0.5662161815503733
+ewma-normal,closed markets,missing,other,scored,0,558.0,18.0,89.0,0.0,0.8205166366347353,0.768486674505193,0.7112781023010808
+ewma-normal,closed markets,benchmark input,all,scored,0,32118.0,313.0,3285.0,0.0,0.780653354520649,0.7789052309912775,0.0
+ewma-normal,closed markets,benchmark input,bar 0,scored,0,10706.0,313.0,1638.0,0.0,1.2314749181314164,0.59335332161939,0.0
+ewma-normal,closed markets,benchmark input,bar 1,scored,0,10706.0,313.0,1639.0,0.0,0.6104506667788172,0.8256978500419583,0.0
+ewma-normal,closed markets,benchmark input,bar 2,scored,0,10706.0,313.0,1639.0,0.0,0.4735056668853645,0.9094420652311557,0.0
+ewma-normal,closed markets,benchmark input,night,scored,0,21477.0,206.0,2367.0,0.0,0.7465099756688466,0.7875906339153802,0.0
+ewma-normal,closed markets,benchmark input,weekend,scored,0,10083.0,127.0,952.0,0.0,0.8494388539075044,0.7612600586464721,0.0
+ewma-normal,closed markets,benchmark input,other,scored,0,558.0,18.0,89.0,0.0,0.8205166366347353,0.768486674505193,0.0
+ewma-normal,"crypto, weekends cut",trading hours only,all,scored,0,1248.0,52.0,156.0,0.0,1.84998376274251,0.6418269230769229,0.0
+ewma-normal,"crypto, weekends cut",trading hours only,bar 0,scored,0,416.0,52.0,52.0,0.0,4.429807711191717,0.22355769230769232,0.0
+ewma-normal,"crypto, weekends cut",trading hours only,bar 1,scored,0,416.0,52.0,52.0,0.0,0.6089667496027299,0.8125,0.0
+ewma-normal,"crypto, weekends cut",trading hours only,bar 2,scored,0,416.0,52.0,52.0,0.0,0.5111768274330821,0.8894230769230769,0.0
+ewma-normal,"crypto, weekends cut",trading hours only,weekend,scored,0,1248.0,52.0,156.0,0.0,1.84998376274251,0.6418269230769229,0.0
+ewma-normal,"crypto, weekends cut",forward-filled,all,scored,0,1248.0,52.0,156.0,0.0,1.84998376274251,0.6418269230769229,0.29503455528846156
+ewma-normal,"crypto, weekends cut",forward-filled,bar 0,scored,0,416.0,52.0,52.0,0.0,4.429807711191717,0.22355769230769232,0.29698768028846156
+ewma-normal,"crypto, weekends cut",forward-filled,bar 1,scored,0,416.0,52.0,52.0,0.0,0.6089667496027299,0.8125,0.29503455528846156
+ewma-normal,"crypto, weekends cut",forward-filled,bar 2,scored,0,416.0,52.0,52.0,0.0,0.5111768274330821,0.8894230769230769,0.29308143028846156
+ewma-normal,"crypto, weekends cut",forward-filled,weekend,scored,0,1248.0,52.0,156.0,0.0,1.84998376274251,0.6418269230769229,0.29503455528846156
+ewma-normal,"crypto, weekends cut",missing,all,scored,0,1248.0,52.0,156.0,0.0,1.84998376274251,0.6418269230769229,0.29503455528846156
+ewma-normal,"crypto, weekends cut",missing,bar 0,scored,0,416.0,52.0,52.0,0.0,4.429807711191717,0.22355769230769232,0.29698768028846156
+ewma-normal,"crypto, weekends cut",missing,bar 1,scored,0,416.0,52.0,52.0,0.0,0.6089667496027299,0.8125,0.29503455528846156
+ewma-normal,"crypto, weekends cut",missing,bar 2,scored,0,416.0,52.0,52.0,0.0,0.5111768274330821,0.8894230769230769,0.29308143028846156
+ewma-normal,"crypto, weekends cut",missing,weekend,scored,0,1248.0,52.0,156.0,0.0,1.84998376274251,0.6418269230769229,0.29503455528846156
+ewma-normal,"crypto, weekends cut",benchmark input,all,scored,0,1248.0,52.0,156.0,0.0,1.84998376274251,0.6418269230769229,0.0
+ewma-normal,"crypto, weekends cut",benchmark input,bar 0,scored,0,416.0,52.0,52.0,0.0,4.429807711191717,0.22355769230769232,0.0
+ewma-normal,"crypto, weekends cut",benchmark input,bar 1,scored,0,416.0,52.0,52.0,0.0,0.6089667496027299,0.8125,0.0
+ewma-normal,"crypto, weekends cut",benchmark input,bar 2,scored,0,416.0,52.0,52.0,0.0,0.5111768274330821,0.8894230769230769,0.0
+ewma-normal,"crypto, weekends cut",benchmark input,weekend,scored,0,1248.0,52.0,156.0,0.0,1.84998376274251,0.6418269230769229,0.0

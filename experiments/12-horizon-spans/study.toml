@@ -1,0 +1,34 @@
+[study]
+name = "12-horizon-spans"
+question = "How much calendar time does a horizon of h own bars span in each market?"
+
+[plan]
+# descriptive, planned and locked on 2026-11-18 (owner's approval) to state the horizons'
+# calendar meaning in the paper; it changes no result
+locked = true
+
+[data]
+tier = 1
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "test"
+
+[models]
+# no model: the spans come from the labels of the forecast cache
+names = []
+
+[seeds]
+values = [0]
+
+[compute]
+device = "cpu"
+estimated_hours = 0.1
+estimated_cost_usd = 0.0
+
+[options]
+# the run id of 02-forecasts whose labels this study reads (runs/<id>/ of that study)
+forecast_cache = "test-2026-11-17"
+# the scored windows whose decisions are measured
+windows = ["t1", "t2", "t3", "t4"]

@@ -1,0 +1,54 @@
+[study]
+name = "04-rq2-center-vs-scale"
+question = "Is any skill of the zero-shot models in the centre of the forecast or in its scale?"
+
+[plan]
+locked = true
+
+[data]
+tier = 1
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "test"
+
+[models]
+names = ["chronos-bolt-small", "chronos-bolt-base", "chronos-2", "timesfm-2.5", "timesfm-3", "tirex-1.1", "tirex-2", "toto-2-22m", "toto-2-313m", "t0-gamma", "moirai-2-small", "kronos-small", "kronos-base", "random-walk", "climatology", "ewma-normal", "garch-normal", "linear"]
+
+[seeds]
+values = [0, 1, 2]
+
+[compute]
+device = "cpu"
+estimated_hours = 1.0
+estimated_cost_usd = 0.0
+
+[options]
+# the run id of 02-forecasts whose cache this study reads (runs/<id>/ of that study)
+forecast_cache = "test-2026-11-17"
+# the run on the development folds d1-d4 whose files stay in results/ (cited by the test answer)
+development_run = "dev-2026-11-17-c"
+# the baseline whose scale every model's scale is compared with (Q2)
+scale_reference = "ewma-normal"
+# the baseline whose sign hit rate on the same decisions is the chance level of Q1 (a target
+# that drifts has a chance level other than 0.5)
+centre_reference = "climatology"
+# one-sided level of every test (H1: the model is better than the reference)
+alpha = 0.05
+min_quarters = 3
+# Holm families: a model with at least this many scored quarters wholly after its scoring
+# start is in the main family (the main verdict); the others form the late family
+main_family_min_quarters = 3
+coverage_tolerance = 0.05
+# circular-block bootstrap of every test and interval (95 % t intervals, level 1 - alpha,
+# descriptive only; at least src.stats.MIN_BOOTSTRAP_BLOCKS blocks, owner's rule): the block
+# is the cell's Politis-White block (at least src.stats.BLOCK_OVERLAP_FLOOR, 4, times the
+# labels' overlap); bootstrap_block_hours and bootstrap_min_block are read by the shared
+# src.benchmark.read_bootstrap but change nothing in this study
+bootstrap_block_hours = 24
+bootstrap_min_block = 4
+bootstrap_resamples = 2000
+bootstrap_seed = 0
+# the horizon in bars of the figure and its table (tables/rq2.csv, figures/rq2.pdf)
+figure_horizon = 1

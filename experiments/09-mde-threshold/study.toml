@@ -1,0 +1,41 @@
+[study]
+name = "09-mde-threshold"
+question = "Which minimum detectable effect can the benchmark's tests resolve, and which threshold should rq1 use?"
+
+[plan]
+# locked on 2026-11-17 (owner's approval) after the development runs dev-2026-11-17 of 09 and
+# 03: X = 2 % (09 Q1), 03 Q1 no and Q2 yes on d1-d4; nothing of the rule changes from here on
+locked = true
+
+[data]
+tier = 1
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "development"
+
+[models]
+# the models are those of 03-rq1-null (read from its study.toml, not repeated here)
+names = []
+
+[seeds]
+values = [0, 1, 2]
+
+[compute]
+device = "cpu"
+estimated_hours = 0.5
+estimated_cost_usd = 0.0
+
+[options]
+# the run id of 02-forecasts whose cache this study reads (runs/<id>/ of that study)
+forecast_cache = "dev-2026-11-17"
+# the size check of the shared bootstrap tests with overlapping 24-bar labels (lib/_size.py):
+# series lengths, block floors (x the overlap), draws, bootstrap draws per test and the seed
+size_lengths = [600, 2400]
+size_floors = [2, 4]
+size_draws = 300
+size_resamples = 300
+size_seed = 0
+# the rule of 03-rq1-null whose power is measured, its power settings, the threshold grid,
+# the knee fraction and the judged horizon are read from 03-rq1-null's study.toml (one place)

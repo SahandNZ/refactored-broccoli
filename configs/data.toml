@@ -1,0 +1,132 @@
+# Candidate instruments for experiments/01-universe and the download period.
+# name = source code. Read by src.data.load_data_config. Every key is required except three
+# optional keys of a group: `timeframe` (without it the base bars are 15m), `no_reference`
+# (without it every stock of the group has a Yahoo reference) and `calendars` (without it an
+# instrument's coverage is counted on weekdays, or every day for crypto).
+# Crypto: Binance USD-M perpetuals listed by 2020-09-30 and still trading on 2026-10-31
+# (each starts at its own listing date), filled to 64 with the next earliest-listed active
+# perpetuals (Oct-Nov 2020). The lists were set when the quotas were crypto 16, forex 16,
+# commodities 8, indices 8 and stocks 16: four times each quota where the source has enough,
+# eight times for stocks; commodities and indices take everything Dukascopy has (some start
+# after 2020; the 01-universe data filter decides). With today's quotas (01-universe
+# study.toml) crypto has 8 times its quota of 8, forex 4 times 16, the US stocks 3 times 16
+# and the non-US stocks 5 times 16.
+# Stocks: 128 candidates, 48 US (all from Alpaca: SIP feed, split adjusted, no bid/ask, so no
+# spread) and 80 from Europe, Japan and Hong Kong (Dukascopy). Stock names are Yahoo tickers
+# (e.g. SAP.DE, 7203.T), so each can be checked against Yahoo daily data.
+
+[period]
+start = "2020-01-01"
+end = "2026-11-01"
+
+# Dukascopy queue order (2026-11-16, rate-limited): commodities and indices first, then the
+# last FX pairs, then non-US stocks one region at a time, largest first.
+# Downloads are I/O bound: threads per source. Dukascopy answers HTTP 429 (rate limit) above
+# about 16 parallel downloads (each one runs 10 requests at once), so it stays at 16. Builds
+# (split adjustment, quality checks, timeframes) use processes.
+[download.workers]
+binance = 64
+dukascopy = 4
+alpaca = 2
+yahoo = 4
+build = 16
+
+[quality]
+min_coverage = 0.95
+max_gap_days = 10
+max_negative_spread_share = 0.001
+outlier_sigma = 10
+max_abs_return = 0.4
+# Yahoo check of stocks (src.data.check_quality): absolute difference between our and Yahoo's
+# daily close-to-close log returns on common days, in bps (returns, not price levels, so a level
+# offset does not count; the 99th percentile leaves out the few days of a corporate action). On
+# 2020-2023 (2026-11-16): US stocks (Alpaca) median 1.5-4, 99th percentile 11-41; non-US stocks
+# (Dukascopy, whose last quote differs from the closing auction) median 8-27, 99th percentile
+# 40-170; on 2020-2026 the largest are a median of 30 (NESTE.HE) and a 99th percentile of 183
+# (8035.T). The limits lie well above every real stock and catch closes that are wrong on many
+# days (a 1 % daily error gives a median of about 100).
+yahoo_return_median_bps = 50
+yahoo_return_p99_bps = 250
+# Largest share of bars with high equal to low. Frozen filler bars (a constant price, as Binance
+# wrote after a delisting) push it far up. On 2020-2023 the real data of every candidate stays at
+# or below 0.150 (VIX; median 0.0001, 99th percentile 0.047), the frozen CVCUSDT series has 0.347
+# (2026-11-16); 0.25 lies between them.
+max_flat_share = 0.25
+
+# Exchange calendar of a stock (exchange_calendars), from the suffix of its Yahoo ticker; "" is a
+# ticker without a suffix (New York). Coverage and the Yahoo comparison use these sessions.
+[stock_calendars]
+"" = "XNYS"
+DE = "XETR"
+PA = "XPAR"
+L = "XLON"
+SW = "XSWX"
+AS = "XAMS"
+MC = "XMAD"
+MI = "XMIL"
+ST = "XSTO"
+CO = "XCSE"
+OL = "XOSL"
+HE = "XHEL"
+BR = "XBRU"
+T = "XTKS"
+HK = "XHKG"
+
+[groups.crypto]
+market = "crypto"
+source = "binance"
+instruments = { ETHUSDT = "ETHUSDT", BCHUSDT = "BCHUSDT", BTCUSDT = "BTCUSDT", XRPUSDT = "XRPUSDT", LTCUSDT = "LTCUSDT", TRXUSDT = "TRXUSDT", ETCUSDT = "ETCUSDT", LINKUSDT = "LINKUSDT", XLMUSDT = "XLMUSDT", ADAUSDT = "ADAUSDT", XMRUSDT = "XMRUSDT", DASHUSDT = "DASHUSDT", ZECUSDT = "ZECUSDT", XTZUSDT = "XTZUSDT", ATOMUSDT = "ATOMUSDT", BNBUSDT = "BNBUSDT", ONTUSDT = "ONTUSDT", IOTAUSDT = "IOTAUSDT", BATUSDT = "BATUSDT", VETUSDT = "VETUSDT", NEOUSDT = "NEOUSDT", QTUMUSDT = "QTUMUSDT", IOSTUSDT = "IOSTUSDT", THETAUSDT = "THETAUSDT", ALGOUSDT = "ALGOUSDT", ZILUSDT = "ZILUSDT", KNCUSDT = "KNCUSDT", ZRXUSDT = "ZRXUSDT", COMPUSDT = "COMPUSDT", OMGUSDT = "OMGUSDT", DOGEUSDT = "DOGEUSDT", KAVAUSDT = "KAVAUSDT", BANDUSDT = "BANDUSDT", RLCUSDT = "RLCUSDT", WAVESUSDT = "WAVESUSDT", MKRUSDT = "MKRUSDT", SNXUSDT = "SNXUSDT", DOTUSDT = "DOTUSDT", YFIUSDT = "YFIUSDT", CRVUSDT = "CRVUSDT", BALUSDT = "BALUSDT", TRBUSDT = "TRBUSDT", SUSHIUSDT = "SUSHIUSDT", RUNEUSDT = "RUNEUSDT", EGLDUSDT = "EGLDUSDT", SOLUSDT = "SOLUSDT", ICXUSDT = "ICXUSDT", STORJUSDT = "STORJUSDT", BLZUSDT = "BLZUSDT", UNIUSDT = "UNIUSDT", AVAXUSDT = "AVAXUSDT", FTMUSDT = "FTMUSDT", ENJUSDT = "ENJUSDT", FLMUSDT = "FLMUSDT", RENUSDT = "RENUSDT", KSMUSDT = "KSMUSDT", NEARUSDT = "NEARUSDT", FILUSDT = "FILUSDT", AAVEUSDT = "AAVEUSDT", RSRUSDT = "RSRUSDT", LRCUSDT = "LRCUSDT", OCEANUSDT = "OCEANUSDT", CVCUSDT = "CVCUSDT", BELUSDT = "BELUSDT" }
+
+[groups.commodity]
+market = "commodity"
+source = "dukascopy"
+# The softs are counted on their exchange's sessions (owner's rule of 2026-11-16 for indices,
+# extended to the softs): on 2020-2023 COCOA, COFFEE, COTTON, OJUICE and SOYBEAN miss 36 of the
+# 37 New York exchange holidays on weekdays and almost no other day (ICE US softs, CBOT
+# soybeans); SUGAR misses 33 of the 35 London holidays and only 13 of the New York ones, so its
+# Dukascopy series follows London, not ICE US. Metals and energy miss only about 7 weekdays in
+# four years (Christmas, New Year), no exchange's holidays, and stay on weekdays. With these
+# calendars the softs cover 0.998-1.000 of their sessions (0.964-0.967 of the weekdays).
+calendars = { COCOA = "XNYS", COFFEE = "XNYS", COTTON = "XNYS", OJUICE = "XNYS", SOYBEAN = "XNYS", SUGAR = "XLON" }
+instruments = { XAUUSD = "xauusd", XAGUSD = "xagusd", COPPER = "coppercmdusd", BRENT = "brentcmdusd", WTI = "lightcmdusd", NATGAS = "gascmdusd", GASOIL = "dieselcmdusd", SOYBEAN = "soybeancmdusx", COFFEE = "coffeecmdusx", SUGAR = "sugarcmdusd", COCOA = "cocoacmdusd", COTTON = "cottoncmdusx", OJUICE = "ojuicecmdusx", XPTUSD = "xptcmdusd", XPDUSD = "xpdcmdusd" }
+
+[groups.index]
+market = "index"
+source = "dukascopy"
+# Coverage of an index is measured on its exchange's sessions (exchange_calendars), so
+# exchange holidays do not count as missing days (owner, 2026-11-16). CHIA50 is the SGX FTSE
+# China A50 future; DOLLAR (ICE) and VIX (Cboe) follow New York holidays. CHIA50 and SGDBLUE
+# (Singapore) use weekdays: exchange_calendars 4.11 has no XSES sessions after 2025-12-31.
+calendars = { USA500 = "XNYS", USATECH = "XNYS", USA30 = "XNYS", USSC2000 = "XNYS", DOLLAR = "XNYS", VIX = "XNYS", DEU40 = "XETR", EUS50 = "XETR", GBR100 = "XLON", FRA40 = "XPAR", ESP35 = "XMAD", CHE20 = "XSWX", NLD25 = "XAMS", ITA40 = "XMIL", PLN20 = "XWAR", ZAF40 = "XJSE", JPN225 = "XTKS", HKG = "XHKG", AUS200 = "XASX" }
+instruments = { USA500 = "usa500idxusd", USATECH = "usatechidxusd", USA30 = "usa30idxusd", USSC2000 = "ussc2000idxusd", DEU40 = "deuidxeur", GBR100 = "gbridxgbp", FRA40 = "fraidxeur", EUS50 = "eusidxeur", ESP35 = "espidxeur", CHE20 = "cheidxchf", NLD25 = "nldidxeur", ITA40 = "itaidxeur", JPN225 = "jpnidxjpy", HKG = "hkgidxhkd", AUS200 = "ausidxaud", CHIA50 = "chiidxusd", SGDBLUE = "sgdidxsgd", PLN20 = "plnidxpln", DOLLAR = "dollaridxusd", VIX = "volidxusd", ZAF40 = "soaidxzar" }
+
+[groups.fx]
+market = "forex"
+source = "dukascopy"
+instruments = { EURUSD = "eurusd", GBPUSD = "gbpusd", USDJPY = "usdjpy", USDCHF = "usdchf", AUDUSD = "audusd", NZDUSD = "nzdusd", USDCAD = "usdcad", EURGBP = "eurgbp", EURJPY = "eurjpy", EURCHF = "eurchf", GBPJPY = "gbpjpy", AUDJPY = "audjpy", EURAUD = "euraud", AUDNZD = "audnzd", CADJPY = "cadjpy", USDSEK = "usdsek", USDNOK = "usdnok", EURNOK = "eurnok", EURSEK = "eursek", USDDKK = "usddkk", USDMXN = "usdmxn", USDZAR = "usdzar", USDTRY = "usdtry", USDPLN = "usdpln", USDHUF = "usdhuf", USDCZK = "usdczk", USDSGD = "usdsgd", USDHKD = "usdhkd", USDCNH = "usdcnh", USDILS = "usdils", AUDCAD = "audcad", AUDCHF = "audchf", AUDSGD = "audsgd", CADCHF = "cadchf", CHFJPY = "chfjpy", EURCAD = "eurcad", EURCZK = "eurczk", EURDKK = "eurdkk", EURHKD = "eurhkd", EURHUF = "eurhuf", EURMXN = "eurmxn", EURNZD = "eurnzd", EURPLN = "eurpln", EURRON = "eurron", EURSGD = "eursgd", EURTHB = "eurthb", EURTRY = "eurtry", EURZAR = "eurzar", GBPAUD = "gbpaud", GBPCAD = "gbpcad", GBPCHF = "gbpchf", GBPNZD = "gbpnzd", GBPPLN = "gbppln", MXNJPY = "mxnjpy", NZDCAD = "nzdcad", NZDCHF = "nzdchf", NZDJPY = "nzdjpy", SGDJPY = "sgdjpy", TRYJPY = "tryjpy", USDRON = "usdron", USDTHB = "usdthb", AUDPLN = "audpln", NZDSGD = "nzdsgd", ZARJPY = "zarjpy" }
+
+[groups.stock_alpaca]
+market = "stock"
+source = "alpaca"
+instruments = { META = "META", LIN = "LIN" }
+
+# Non-US stocks: 15m bars like the other Dukascopy groups since 2026-11-16 (owner's choice). Their
+# 1h parts (raw/dukascopy/1h/, downloaded first because 15m needs one request per day) stay on
+# disk as an independent check of the 15m-to-1h resampling.
+[groups.stock_international]
+market = "stock"
+source = "dukascopy"
+# Yahoo no longer serves ROG.SW (Roche dividend-right certificate, HTTP 404 on 2026-11-16), so it
+# has no Yahoo split or price reference. Roche had no split 2020-2026 (none on RO.SW either), and
+# its Dukascopy daily returns track Roche's bearer share RO.SW (Yahoo) with correlation 0.917
+# (NESN.SW against its own Yahoo ticker: 0.965; median absolute daily difference 32 bps); the
+# other quality checks apply as usual (owner, 2026-11-16).
+no_reference = ["ROG.SW"]
+instruments = { "SAP.DE" = "sapdeeur", "MC.PA" = "mcfreur", "AZN.L" = "azngbgbx", "NESN.SW" = "nesnchchf", "ASML.AS" = "asmlnleur", "ITX.MC" = "itxeseur", "ATCO-A.ST" = "atcoasesek", "7203.T" = "7203jpjpy", "0700.HK" = "0700hkhkd", "SIE.DE" = "siedeeur", "OR.PA" = "orfreur", "SHEL.L" = "rdsbgbgbx", "ROG.SW" = "rogchchf", "INGA.AS" = "inganleur", "SAN.MC" = "saneseur", "VOLV-B.ST" = "volvbsesek", "6758.T" = "6758jpjpy", "0941.HK" = "0941hkhkd", "ALV.DE" = "alvdeeur", "TTE.PA" = "fpfreur", "HSBA.L" = "hsbagbgbx", "NOVN.SW" = "novnchchf", "AD.AS" = "ahnleur", "IBE.MC" = "ibeeseur", "ERIC-B.ST" = "ericbsesek", "9984.T" = "9984jpjpy", "1299.HK" = "1299hkhkd", "BAS.DE" = "basdeeur", "SAN.PA" = "sanfreur", "ULVR.L" = "ulvrgbgbx", "UBSG.SW" = "ubsgchchf", "PHIA.AS" = "phianleur", "BBVA.MC" = "bbvaeseur", "HM-B.ST" = "hmbsesek", "8306.T" = "8306jpjpy", "0939.HK" = "0939hkhkd", "DTE.DE" = "dtedeeur", "AIR.PA" = "airfreur", "RIO.L" = "riogbgbx", "ZURN.SW" = "zurnchchf", "ENEL.MI" = "eneliteur", "NOVO-B.CO" = "novobdkdkk", "8035.T" = "8035jpjpy", "0883.HK" = "0883hkhkd", "BMW.DE" = "bmwdeeur", "BNP.PA" = "bnpfreur", "GSK.L" = "gskgbgbx", "ABBN.SW" = "abbnchchf", "MAERSK-B.CO" = "maerskbdkdkk", "9983.T" = "9983jpjpy", "0388.HK" = "0388hkhkd", "ADS.DE" = "adsdeeur", "SU.PA" = "sufreur", "BATS.L" = "batsgbgbx", "EQNR.OL" = "stlnonok", "7974.T" = "7974jpjpy", "2318.HK" = "2318hkhkd", "RWE.DE" = "rwedeeur", "DG.PA" = "dgfreur", "GLEN.L" = "glengbgbx", "NHY.OL" = "nhynonok", "4502.T" = "4502jpjpy", "0857.HK" = "0857hkhkd", "MUV2.DE" = "muv2deeur", "SAF.PA" = "saffreur", "DGE.L" = "dgegbgbx", "NESTE.HE" = "nes1vfieur", "8031.T" = "8031jpjpy", "1398.HK" = "1398hkhkd", "IFX.DE" = "ifxdeeur", "KER.PA" = "kerfreur", "VOD.L" = "vodgbgbx", "ABI.BR" = "abibeeur", "6954.T" = "6954jpjpy", "VOW3.DE" = "vow3deeur", "ORA.PA" = "orafreur", "BARC.L" = "barcgbgbx", "8316.T" = "8316jpjpy", "6098.T" = "6098jpjpy", "6367.T" = "6367jpjpy" }
+
+# US stocks come from Alpaca (owner's choice, 2026-11-15): SIP feed, split-adjusted only,
+# regular session kept when the panel is built. Dukascopy serves the other markets.
+[groups.stock_us]
+market = "stock"
+source = "alpaca"
+instruments = { AAPL = "AAPL", MSFT = "MSFT", NVDA = "NVDA", AMZN = "AMZN", GOOGL = "GOOGL", TSLA = "TSLA", NFLX = "NFLX", INTC = "INTC", JPM = "JPM", GS = "GS", XOM = "XOM", JNJ = "JNJ", LLY = "LLY", WMT = "WMT", KO = "KO", PG = "PG", MCD = "MCD", BA = "BA", CAT = "CAT", NEE = "NEE", FCX = "FCX", AMT = "AMT", AVGO = "AVGO", ADBE = "ADBE", CRM = "CRM", ORCL = "ORCL", CSCO = "CSCO", QCOM = "QCOM", AMD = "AMD", IBM = "IBM", C = "C", WFC = "WFC", MS = "MS", AXP = "AXP", TMO = "TMO", ABT = "ABT", BMY = "BMY", AMGN = "AMGN", HD = "HD", SBUX = "SBUX", COST = "COST", PM = "PM", LMT = "LMT", DE = "DE", EOG = "EOG", SO = "SO" }

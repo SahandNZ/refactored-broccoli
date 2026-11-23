@@ -1,0 +1,133 @@
+[study]
+name = "02-forecasts"
+question = "Does every model give a valid forecast for every decision of the benchmark windows?"
+
+[plan]
+# locked on 2026-11-17 (owner's approval) after the development runs dev-2026-11-17 of 09 and
+# 03: X = 2 % (09 Q1), 03 Q1 no and Q2 yes on d1-d4; nothing of the rule changes from here on
+locked = true
+
+[data]
+tier = 1
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "test"
+
+[models]
+names = ["random-walk", "climatology", "ewma-normal", "garch-normal", "linear", "chronos-bolt-small", "chronos-bolt-base", "chronos-2", "timesfm-2.5", "timesfm-3", "tirex-1.1", "tirex-2", "toto-2-22m", "toto-2-313m", "t0-gamma", "moirai-2-small", "kronos-small", "kronos-base"]
+
+[seeds]
+values = [0, 1, 2]
+
+[compute]
+device = "cuda"
+estimated_hours = 25.0
+estimated_cost_usd = 0.0
+
+[options]
+universe_run = "2026-11-17T0005-random-1000"
+lookback = 512
+# label horizons in the asset's own 1h bars (the steps a model forecasts)
+horizons = [1, 4, 24]
+span_bars = 96
+train_days = 730
+step_hours = { development = 1, test = 1, leakage = 4 }
+# Kronos decides every 167 hours from each window start (00:00 UTC): one week less one hour,
+# so a quarter's ~13 grid points cover about 14 hours of the day, the same hours in every
+# window
+kronos_every_hours = 167
+kronos_paths = 20
+# Kronos's tokenizer and sampling (the values of its reference code: temperature 1, top-p 0.9)
+kronos_tokenizer = "NeoQuasar/Kronos-Tokenizer-base"
+kronos_tokenizer_revision = "0e0117387f39004a9016484a186a908917e22426"
+kronos_temperature = 1.0
+kronos_top_p = 0.9
+chunk = 1024
+moirai_chunk = 50000
+# lags of the linear baseline in own bars
+linear_lags = [1, 2, 4, 8, 24]
+linear_ridge = 1.0
+crypto_fee = "taker"
+# Alpaca has no bid/ask: large US stocks are assumed to cost half a 2 bps spread per side
+# (typical quoted spread of S&P 100 names); stated in the plan as an assumption.
+us_stock_half_spread_bps = 1.0
+# the window [start, end) whose median bid-ask spread sets each Dukascopy asset's cost: the
+# selection window of 01-universe, before every fold (no cost is fitted on fold data)
+spread_window = ["2020-01-01", "2024-01-01"]
+# Q1 decision rule: every model covers at least this share of the labelled decisions
+q1_min_share = 0.99
+
+# How each zero-shot model is built (kind and Hugging Face name for src.models.build_forecaster)
+[options.zero_shot]
+chronos-bolt-small = ["chronos", "amazon/chronos-bolt-small"]
+chronos-bolt-base = ["chronos", "amazon/chronos-bolt-base"]
+chronos-2 = ["chronos", "amazon/chronos-2"]
+"timesfm-2.5" = ["timesfm", "google/timesfm-2.5-200m-pytorch"]
+timesfm-3 = ["timesfm3", "google/timesfm-3.0-pytorch"]
+"tirex-1.1" = ["tirex", "NX-AI/TiRex"]
+tirex-2 = ["tirex2", "NX-AI/TiRex-2"]
+toto-2-22m = ["toto2", "Datadog/Toto-2.0-22m"]
+toto-2-313m = ["toto2", "Datadog/Toto-2.0-313m"]
+t0-gamma = ["t0", "theforecastingcompany/t0-gamma"]
+moirai-2-small = ["moirai2", "Salesforce/moirai-2.0-R-small"]
+kronos-small = ["kronos", "NeoQuasar/Kronos-small"]
+kronos-base = ["kronos", "NeoQuasar/Kronos-base"]
+
+# The commit of each repository every run loads (checked against its main before loading,
+# src.models.require_revision); checked on 2026-11-17, main was at these commits.
+[options.revisions]
+chronos-bolt-small = "772f3d25d38aec6d914c8949dab4462e2d46f5d8"
+chronos-bolt-base = "5d9f166d69f47aef3401367a7b842e78fe97b121"
+chronos-2 = "29ec3766d36d6f73f0696f85560a422f50e8498c"
+"timesfm-2.5" = "1d952420fba87f3c6dee4f240de0f1a0fbc790e3"
+timesfm-3 = "43046b85ec22d584a13f8098c2ed39c889e129c2"
+"tirex-1.1" = "43ebaaff068c1390785c387b3e5178df3f4c92ca"
+tirex-2 = "352636173653592b6dceb3fbeee9224ca97952a9"
+toto-2-22m = "685e4ae3e2be8d8998025e53dd98e7fdcb296a89"
+toto-2-313m = "a7bab288f5e95f8606f8306f86659357e1c001ef"
+t0-gamma = "fef67abad3eed4f227c7b536a6e8ee4e9ab1080d"
+moirai-2-small = "30f43ff08c8494f4943ae1521e9d4e94a0fbb389"
+kronos-small = "901c26c1332695a2a8f243eb2f37243a37bea320"
+kronos-base = "2b554741eca47781b64468546e77fef3e85130e6"
+
+# Release date (UTC) of each model = the later of repository creation and first weight upload
+# (owner decision A2), from the Hugging Face history checked on 2026-11-17; scoring starts at
+# max(release date, upload date of the pinned weights, options.weight_dates)
+[options.release_dates]
+chronos-bolt-small = "2024-11-25"
+chronos-bolt-base = "2024-11-25"
+chronos-2 = "2025-10-30"
+"timesfm-2.5" = "2025-09-02"
+timesfm-3 = "2026-08-24"
+"tirex-1.1" = "2025-05-26"
+tirex-2 = "2026-06-16"
+toto-2-22m = "2026-04-14"
+toto-2-313m = "2026-04-14"
+t0-gamma = "2026-10-15"
+moirai-2-small = "2025-08-06"
+kronos-small = "2025-06-30"
+kronos-base = "2025-06-30"
+
+# Upload date (UTC) of the exact weights of the pinned revision: the earliest commit whose
+# weight tensors equal them (a later format conversion with identical tensors keeps the
+# earlier date). A model is scored only after the later of this and its release date.
+[options.weight_dates]
+chronos-bolt-small = "2024-11-25"
+chronos-bolt-base = "2024-11-25"
+chronos-2 = "2025-10-30"
+"timesfm-2.5" = "2025-09-02"
+timesfm-3 = "2026-08-24"
+"tirex-1.1" = "2025-05-26"
+tirex-2 = "2026-07-02"
+toto-2-22m = "2026-04-14"
+toto-2-313m = "2026-05-12"
+t0-gamma = "2026-10-15"
+moirai-2-small = "2025-08-06"
+kronos-small = "2025-06-30"
+kronos-base = "2025-06-30"
+
+[options.pretraining_cutoffs]
+kronos-small = "2024-07-01"
+kronos-base = "2024-07-01"

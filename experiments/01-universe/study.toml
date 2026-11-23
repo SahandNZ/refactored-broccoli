@@ -1,0 +1,111 @@
+[study]
+name = "01-universe"
+question = "Which assets, and how many, should the benchmark use, and why?"
+
+[plan]
+locked = true
+
+[data]
+tier = 0
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "development"
+
+# the models Q3 ranks (amended 2026-11-18, Plan changes): the five baselines and the eight
+# zero-shot models released before the test period (RQ1's main family), in paper order
+[models]
+names = ["random-walk", "climatology", "ewma-normal", "garch-normal", "linear", "chronos-bolt-small", "chronos-bolt-base", "chronos-2", "timesfm-2.5", "tirex-1.1", "moirai-2-small", "kronos-small", "kronos-base"]
+
+[seeds]
+values = [0]
+
+[compute]
+device = "cpu"
+estimated_hours = 1.0
+estimated_cost_usd = 0.0
+
+[options]
+# the selection window [start, end) and the held-out window [end, holdout_end) on which Q1 is
+# decided (it ends where development fold d1 starts)
+start = "2020-01-01"
+end = "2024-01-01"
+holdout_end = "2024-11-01"
+# a first bar this many days after `start` still counts as data from the start (most markets
+# first opened on 2 January 2020, some after 00:00 UTC)
+start_tolerance_days = 7
+# common weekly returns a pair needs (rule fix 2026-11-16: weekly returns). Selection window:
+# 208 weekly returns; the shortest pair of the filtered candidates has 112 (platinum, first bar
+# 2021-11-01, with the other commodities), and 100 gives a correlation a standard error of about
+# 0.1. Held-out window: only 43 weekly returns, and coins delisted in it (WAVESUSDT stops on
+# 2024-06-11) have about 23; the shortest pair has 20 (WAVESUSDT, MAERSK-B.CO), so 20. A bootstrap
+# draw of the selection window holds about 112 +- 14 weeks of platinum, often fewer than 100, so
+# each draw needs 20 like the held-out window (data of 2026-11-16).
+min_overlap = 100
+holdout_min_overlap = 20
+bootstrap_min_overlap = 20
+duplicate_threshold = 0.85
+max_spread_ratio = 3.0
+min_daily_amount = 1000000.0
+pegged_currencies = ["HKD", "DKK"]
+max_per_sector = 3
+# 1000 draws (rule fix 2026-11-16: the 90th percentile of 20 draws is too noisy); Q3's three
+# Random universes are drawn separately with seeds 0, 1 and 2
+random_universes = 1000
+q1_percentile = 90
+# interval of the universe's gap to the Random median effective rank (rule 13): a moving-block bootstrap over the weeks
+# of the selection window, blocks of 4 weeks (about one month, as the approved 30 days, which
+# keeps volatility clusters together; 52 blocks over 208 weeks), 1000 draws, 95 %; the normal
+# interval gap +- z * SE, SE the standard deviation of the paired bootstrap gaps (rule fix
+# 2026-11-16: the percentile interval did not hold the point gap)
+bootstrap_block_weeks = 4
+bootstrap_resamples = 1000
+interval_level = 0.95
+
+# Latest first bar per market (crypto pairs list later; platinum and palladium start mid-2021 at
+# Dukascopy, admitted on 2026-11-16 by the owner); the other markets need data from `start`.
+[options.listed_by]
+crypto = "2020-12-31"
+commodity = "2021-12-31"
+
+[options.anchors]
+crypto = ["BTCUSDT", "ETHUSDT"]
+forex = ["EURUSD", "USDJPY"]
+commodity = ["XAUUSD", "COPPER", "BRENT"]
+index = ["USA500"]
+stock_us = []
+stock_non_us = []
+
+# the greedy pick of a pool chooses among this many times its quota of most liquid candidates
+# (rule fix 2026-11-16: forex 2, because 63 forex pairs pass the filters, fewer than 4 x 16, so
+# a factor of 4 took them all and illiquid pairs such as USDTRY were picked)
+[options.liquid_pool_factor]
+crypto = 4
+forex = 2
+commodity = 4
+index = 4
+stock_us = 4
+stock_non_us = 4
+
+# the most assets of the universe in each selection pool (a pool with fewer candidates takes
+# all it can)
+[options.quotas]
+crypto = 8
+forex = 16
+commodity = 8
+index = 8
+stock_us = 16
+stock_non_us = 16
+
+# Q3 (amended 2026-11-18, exploratory; README Robustness (Q3)): the ranking of [models] by mean
+# CRPS on the test forecast cache of 02-forecasts, horizon 1, test quarters t1-t4; 1000 random
+# splits of the universe into halves (half of every pool), decided by the median tau
+[options.ranking]
+forecast_cache = "test-2026-11-17"
+windows = ["t1", "t2", "t3", "t4"]
+horizon = 1
+splits = 1000
+tau_threshold = 0.7
+# the central share of the 1000 split taus their reported range covers (a spread, not an interval)
+range_level = 0.95

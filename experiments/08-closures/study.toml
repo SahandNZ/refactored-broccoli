@@ -1,0 +1,60 @@
+[study]
+name = "08-closures"
+question = "When a market is closed, how should a zero-shot model be fed?"
+
+[plan]
+# locked on 2026-11-17 (owner's go, 20:06 UTC) for the test folds, with the 02 test cache
+# test-2026-11-17; the development run dev-2026-11-17 uses the same plan with folds
+# "development", cache dev-2026-11-17 and locked = false; nothing of the rule changes from here
+locked = true
+
+[data]
+tier = 1
+markets = ["crypto", "forex", "commodity", "index", "stock"]
+timeframes = ["1h"]
+
+[folds]
+use = "test"
+
+[models]
+# Kronos (kronos-small, kronos-base) is not coded for this study: see the plan's Status
+names = ["chronos-bolt-small", "chronos-bolt-base", "chronos-2", "timesfm-2.5", "timesfm-3", "tirex-1.1", "tirex-2", "toto-2-22m", "toto-2-313m", "t0-gamma", "moirai-2-small", "ewma-normal"]
+
+[seeds]
+values = [0]
+
+[compute]
+device = "cuda"
+estimated_hours = 1.5
+estimated_cost_usd = 0.0
+
+[options]
+# the run id of 02-forecasts whose config.toml (label, context length, model builds, release
+# dates) and assets.csv this study uses, so its labels and models are the benchmark's
+forecast_cache = "test-2026-11-17"
+# a closure is at least this many hours without a bar; the first reopen_bars own bars after it
+# are the targets
+min_closure_hours = 12
+# a decision is kept only when its trading-hours context (the own closes in the 512 calendar
+# hours) holds at least this many: about 100 for a US stock, at least about 50 for the shortest
+# sessions across a holiday week, more for other markets, so only gap-damaged contexts are
+# dropped, from every arm
+min_own_closes = 32
+reopen_bars = 3
+# one-sided level of the Diebold-Mariano tests of forward-filled and missing against the
+# reference, trading hours only (H1: the alternative has the lower CRPS); Holm within each family
+alpha = 0.05
+# the tests and the skill intervals run on the series of closure days (the UTC day a closure
+# ends); a model is tested only with at least this many closure days
+min_closure_days = 20
+# below this many closure days the one-sided test is clearly liberal with dependent days (about
+# 8 % at alpha 0.05 with 40 days, more with fewer); the results' limitations then say so
+small_sample_days = 80
+# a model with fewer of the 4 scored quarters starting at or after its scoring start (the later
+# of release and weight upload; rq1's rule) is late: its own Holm family and verdict
+min_quarters = 3
+# moving-block bootstrap of the skill intervals (level 1 - alpha, Politis-White block of the
+# closure-day differences)
+bootstrap_resamples = 2000
+bootstrap_seed = 0
+# which models read NaN as missing is one table for the lab: src.models.missing_value_reason

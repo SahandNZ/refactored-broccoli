@@ -1,0 +1,13 @@
+model,sample,top_p,paths,horizon,decisions,coverage,median_width
+kronos-small,all decisions,0.9000,"3 seeds pooled, 60",1,7903,0.6220,1.8269
+kronos-small,all decisions,0.9000,"3 seeds pooled, 60",4,7903,0.6015,1.6360
+kronos-small,all decisions,0.9000,"3 seeds pooled, 60",24,7623,0.4778,1.7827
+kronos-small,all decisions,0.9000,"seed 0, 20",1,7903,0.5848,1.7021
+kronos-small,all decisions,0.9000,"seed 0, 20",4,7903,0.5645,1.5148
+kronos-small,all decisions,0.9000,"seed 0, 20",24,7623,0.4484,1.6646
+kronos-base,all decisions,0.9000,"3 seeds pooled, 60",1,7903,0.6329,1.8669
+kronos-base,all decisions,0.9000,"3 seeds pooled, 60",4,7903,0.6298,1.6668
+kronos-base,all decisions,0.9000,"3 seeds pooled, 60",24,7623,0.4496,1.7068
+kronos-base,all decisions,0.9000,"seed 0, 20",1,7903,0.5838,1.7269
+kronos-base,all decisions,0.9000,"seed 0, 20",4,7903,0.5931,1.5492
+kronos-base,all decisions,0.9000,"seed 0, 20",24,7623,0.4160,1.5784

@@ -1,0 +1,196 @@
+model,family,market,horizon,status,baseline,times,skill,skill_low,skill_high,adjusted_p,beats_baseline
+chronos-bolt-small,main,commodity,1,scored,climatology,5547,-13.159573249532652,-14.013448588443456,-12.305697910621848,1.0,False
+chronos-bolt-small,main,commodity,4,scored,climatology,5535,-4.447654310926019,-5.095675434430675,-3.7996331874213634,1.0,False
+chronos-bolt-small,main,commodity,24,scored,"climatology, linear",5455,-4.749381270317032,-6.281352654669018,-3.217409885965047,1.0,False
+chronos-bolt-small,main,crypto,1,scored,climatology,8183,-11.410736622125729,-13.520482163206715,-9.300991081044742,1.0,False
+chronos-bolt-small,main,crypto,4,scored,climatology,8171,-4.339816341902703,-5.372117351871184,-3.307515331934221,1.0,False
+chronos-bolt-small,main,crypto,24,scored,climatology,8091,-5.632492021562885,-8.215402279834388,-3.049581763291381,1.0,False
+chronos-bolt-small,main,forex,1,scored,linear,5838,-9.725066220810753,-10.274123662149329,-9.176008779472175,1.0,False
+chronos-bolt-small,main,forex,4,scored,"climatology, linear",5826,-3.770990576733935,-4.240687290527435,-3.3012938629404336,1.0,False
+chronos-bolt-small,main,forex,24,scored,climatology,5746,-4.45075954169798,-5.418575636548818,-3.4829434468471416,1.0,False
+chronos-bolt-small,main,index,1,scored,climatology,5592,-12.593318885790406,-13.449358620476016,-11.737279151104795,1.0,False
+chronos-bolt-small,main,index,4,scored,"climatology, linear",5580,-4.452044423422175,-5.119773679171294,-3.784315167673056,1.0,False
+chronos-bolt-small,main,index,24,scored,climatology,5500,-5.207800636056947,-7.104698232987434,-3.310903039126461,1.0,False
+chronos-bolt-small,main,stock,1,scored,climatology,4807,-16.250300426119058,-17.064037887783783,-15.43656296445433,1.0,False
+chronos-bolt-small,main,stock,4,scored,climatology,4776,-4.070147409731284,-4.774923120369247,-3.3653716990933207,1.0,False
+chronos-bolt-small,main,stock,24,scored,"climatology, garch-normal",4540,-2.6141972071162867,-3.8216008146842286,-1.4067935995483445,1.0,False
+chronos-bolt-base,main,commodity,1,scored,climatology,5547,-12.545105955762882,-13.465989422746516,-11.624222488779246,1.0,False
+chronos-bolt-base,main,commodity,4,scored,climatology,5535,-4.516707893522298,-5.187648508258872,-3.8457672787857247,1.0,False
+chronos-bolt-base,main,commodity,24,scored,"climatology, linear",5455,-6.904671958521003,-8.602035060537304,-5.207308856504702,1.0,False
+chronos-bolt-base,main,crypto,1,scored,climatology,8183,-10.810088033329125,-12.006365765019009,-9.61381030163924,1.0,False
+chronos-bolt-base,main,crypto,4,scored,climatology,8171,-4.854182578562272,-6.009685333141043,-3.698679823983501,1.0,False
+chronos-bolt-base,main,crypto,24,scored,climatology,8091,-8.395027818779276,-11.292051108481807,-5.498004529076745,1.0,False
+chronos-bolt-base,main,forex,1,scored,linear,5838,-9.871663330968827,-10.473963242960677,-9.26936341897698,1.0,False
+chronos-bolt-base,main,forex,4,scored,"climatology, linear",5826,-4.5295982527219,-5.013865877543142,-4.045330627900658,1.0,False
+chronos-bolt-base,main,forex,24,scored,climatology,5746,-7.051687757322322,-8.328614908305788,-5.774760606338856,1.0,False
+chronos-bolt-base,main,index,1,scored,climatology,5592,-12.433916214109852,-13.538091928769088,-11.32974049945062,1.0,False
+chronos-bolt-base,main,index,4,scored,"climatology, linear",5580,-5.063163437999951,-5.769590821257149,-4.356736054742753,1.0,False
+chronos-bolt-base,main,index,24,scored,climatology,5500,-7.874674019748862,-10.037870019141748,-5.711478020355976,1.0,False
+chronos-bolt-base,main,stock,1,scored,climatology,4807,-15.328263331741088,-16.113904188483723,-14.542622474998453,1.0,False
+chronos-bolt-base,main,stock,4,scored,climatology,4776,-4.196379929443794,-4.912674151556349,-3.4800857073312392,1.0,False
+chronos-bolt-base,main,stock,24,scored,"climatology, garch-normal",4540,-5.507419088260823,-7.492516153979267,-3.5223220225423795,1.0,False
+chronos-2,late,commodity,1,scored,climatology,43,-5.574039537782061,-9.119735838856691,-2.028343236707428,1.0,False
+chronos-2,late,commodity,4,"untested: 40 decision times, fewer than 5 blocks of 12",climatology,40,-4.151062372743053,,,,False
+chronos-2,late,commodity,24,"untested: 20 decision times, fewer than 5 blocks of 40",climatology,20,-13.15503432813232,,,,False
+chronos-2,late,crypto,1,scored,climatology,47,-1.9934677420446525,-4.670792768711943,0.6838572846226381,1.0,False
+chronos-2,late,crypto,4,"untested: 44 decision times, fewer than 5 blocks of 12",climatology,44,-1.324235798735418,,,,False
+chronos-2,late,crypto,24,"untested: 24 decision times, fewer than 5 blocks of 48",climatology,24,-4.423997617285913,,,,False
+chronos-2,late,forex,1,scored,linear,44,-4.919070351686372,-7.361850639753394,-2.4762900636193503,1.0,False
+chronos-2,late,forex,4,"untested: 41 decision times, fewer than 5 blocks of 12",linear,41,-3.255467350578756,,,,False
+chronos-2,late,forex,24,"untested: 21 decision times, fewer than 5 blocks of 40",climatology,21,-15.363873796666503,,,,False
+chronos-2,late,index,1,scored,climatology,43,-4.288799421811085,-9.936078499632927,1.3584796560107586,1.0,False
+chronos-2,late,index,4,"untested: 40 decision times, fewer than 5 blocks of 12",climatology,40,-1.4008997239409735,,,,False
+chronos-2,late,index,24,"untested: 20 decision times, fewer than 5 blocks of 40",climatology,20,7.361164616272998,,,,False
+chronos-2,late,stock,1,"untested: 38 decision times, fewer than 5 blocks of 13",climatology,38,-4.062389211297646,,,,False
+chronos-2,late,stock,4,"untested: 31 decision times, fewer than 5 blocks of 12",climatology,31,-0.9754150048165932,,,,False
+chronos-2,late,stock,24,not scored: no valid decision,,0,,,,,False
+timesfm-2.5,late,commodity,1,scored,climatology,1009,-3.969062534983903,-4.839972535205694,-3.0981525347621104,1.0,False
+timesfm-2.5,late,commodity,4,scored,climatology,1006,-1.820580498540436,-2.8586965455699107,-0.7824644515109616,1.0,False
+timesfm-2.5,late,commodity,24,scored,climatology,986,-2.76771144235064,-5.615301914294991,0.079879029593711,1.0,False
+timesfm-2.5,late,crypto,1,scored,climatology,1439,-3.695341959217413,-4.639972229618614,-2.750711688816212,1.0,False
+timesfm-2.5,late,crypto,4,scored,climatology,1436,-2.175969903357333,-3.0277925699748,-1.3241472367398668,1.0,False
+timesfm-2.5,late,crypto,24,scored,climatology,1416,-2.6645628855530124,-5.496925002403817,0.1677992312977916,1.0,False
+timesfm-2.5,late,forex,1,scored,linear,1052,-3.0810176432040315,-3.7474087484488936,-2.4146265379591694,1.0,False
+timesfm-2.5,late,forex,4,scored,linear,1049,-2.3877256101750177,-3.10445221176089,-1.6709990085891455,1.0,False
+timesfm-2.5,late,forex,24,scored,climatology,1029,-5.038909643157052,-8.299989379695068,-1.7778299066190364,1.0,False
+timesfm-2.5,late,index,1,scored,climatology,1009,-3.283227970018787,-4.105146807951121,-2.4613091320864537,1.0,False
+timesfm-2.5,late,index,4,scored,climatology,1006,-2.896270550683755,-4.010073845205953,-1.7824672561615575,1.0,False
+timesfm-2.5,late,index,24,scored,climatology,986,-6.894294932499845,-13.785129933979407,-0.0034599310202816,1.0,False
+timesfm-2.5,late,stock,1,scored,climatology,868,-6.991644250894513,-7.938217144422607,-6.045071357366419,1.0,False
+timesfm-2.5,late,stock,4,scored,climatology,861,-2.498084660910771,-3.3838244269796363,-1.6123448948419057,1.0,False
+timesfm-2.5,late,stock,24,"untested: 802 decision times, fewer than 5 blocks of 260",garch-normal,802,-2.509141127349679,,,,False
+timesfm-3,late,commodity,1,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,commodity,4,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,commodity,24,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,crypto,1,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,crypto,4,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,crypto,24,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,forex,1,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,forex,4,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,forex,24,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,index,1,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,index,4,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,index,24,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,stock,1,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,stock,4,not scored: released after the scored folds,,0,,,,,False
+timesfm-3,late,stock,24,not scored: released after the scored folds,,0,,,,,False
+tirex-1.1,late,commodity,1,scored,climatology,2633,-1.2264259590720528,-1.5582061511623722,-0.8946457669817334,1.0,False
+tirex-1.1,late,commodity,4,scored,climatology,2627,-1.2437067536545945,-1.8076380689413405,-0.679775438367848,1.0,False
+tirex-1.1,late,commodity,24,scored,"climatology, linear",2587,-3.268706323147419,-4.94643721094878,-1.590975435346058,1.0,False
+tirex-1.1,late,crypto,1,scored,climatology,3815,-1.0763675646349613,-1.4610448863013317,-0.6916902429685909,1.0,False
+tirex-1.1,late,crypto,4,scored,climatology,3809,-1.894744932803727,-2.609875101527821,-1.1796147640796324,1.0,False
+tirex-1.1,late,crypto,24,scored,climatology,3769,-4.300721586710488,-6.9626212674068855,-1.6388219060140896,1.0,False
+tirex-1.1,late,forex,1,scored,linear,2756,-0.7983973169761516,-1.0371955350988242,-0.5595990988534789,1.0,False
+tirex-1.1,late,forex,4,scored,linear,2750,-1.529681440235664,-1.986742565943312,-1.0726203145280164,1.0,False
+tirex-1.1,late,forex,24,scored,climatology,2710,-3.359177556222903,-4.937439826587797,-1.7809152858580095,1.0,False
+tirex-1.1,late,index,1,scored,climatology,2642,-1.2305020414724144,-1.5686286650673846,-0.8923754178774441,1.0,False
+tirex-1.1,late,index,4,scored,"climatology, linear",2636,-1.4766490064392237,-2.0323041268427864,-0.9209938860356603,1.0,False
+tirex-1.1,late,index,24,scored,climatology,2596,-3.393399468439906,-5.442262472519023,-1.3445364643607889,1.0,False
+tirex-1.1,late,stock,1,scored,climatology,2266,-2.429732121289141,-2.764921754774532,-2.09454248780375,1.0,False
+tirex-1.1,late,stock,4,scored,climatology,2251,-1.398963665705666,-1.8185390540282755,-0.9793882773830562,1.0,False
+tirex-1.1,late,stock,24,scored,garch-normal,2134,-1.211431510447181,-2.972325802840221,0.54946278194586,1.0,False
+tirex-2,late,commodity,1,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,commodity,4,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,commodity,24,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,crypto,1,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,crypto,4,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,crypto,24,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,forex,1,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,forex,4,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,forex,24,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,index,1,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,index,4,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,index,24,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,stock,1,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,stock,4,not scored: released after the scored folds,,0,,,,,False
+tirex-2,late,stock,24,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,commodity,1,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,commodity,4,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,commodity,24,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,crypto,1,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,crypto,4,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,crypto,24,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,forex,1,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,forex,4,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,forex,24,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,index,1,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,index,4,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,index,24,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,stock,1,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,stock,4,not scored: released after the scored folds,,0,,,,,False
+toto-2-22m,late,stock,24,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,commodity,1,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,commodity,4,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,commodity,24,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,crypto,1,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,crypto,4,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,crypto,24,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,forex,1,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,forex,4,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,forex,24,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,index,1,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,index,4,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,index,24,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,stock,1,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,stock,4,not scored: released after the scored folds,,0,,,,,False
+toto-2-313m,late,stock,24,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,commodity,1,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,commodity,4,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,commodity,24,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,crypto,1,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,crypto,4,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,crypto,24,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,forex,1,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,forex,4,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,forex,24,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,index,1,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,index,4,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,index,24,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,stock,1,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,stock,4,not scored: released after the scored folds,,0,,,,,False
+t0-gamma,late,stock,24,not scored: released after the scored folds,,0,,,,,False
+moirai-2-small,late,commodity,1,scored,climatology,1444,-5.68713432869028,-6.946254176156778,-4.428014481223782,1.0,False
+moirai-2-small,late,commodity,4,scored,climatology,1441,-1.9385860313573036,-3.147522357950206,-0.7296497047644006,1.0,False
+moirai-2-small,late,commodity,24,scored,climatology,1421,-5.736710046617843,-8.649216799645849,-2.824203293589838,1.0,False
+moirai-2-small,late,crypto,1,scored,climatology,2087,-4.380555118763674,-5.263252548069717,-3.4978576894576303,1.0,False
+moirai-2-small,late,crypto,4,scored,climatology,2084,-3.1448253154488404,-4.233688863149058,-2.055961767748623,1.0,False
+moirai-2-small,late,crypto,24,scored,climatology,2064,-5.463437871031407,-9.014523590509889,-1.912352151552926,1.0,False
+moirai-2-small,late,forex,1,scored,linear,1508,-4.386555507921819,-5.0029306192152125,-3.7701803966284246,1.0,False
+moirai-2-small,late,forex,4,scored,linear,1505,-2.854834417432261,-3.541646512637599,-2.168022322226924,1.0,False
+moirai-2-small,late,forex,24,scored,climatology,1485,-7.614763330631002,-10.665705722591952,-4.563820938670053,1.0,False
+moirai-2-small,late,index,1,scored,climatology,1446,-6.378932071737631,-7.416630619543099,-5.341233523932162,1.0,False
+moirai-2-small,late,index,4,scored,climatology,1443,-2.967853420802724,-3.946150801199866,-1.9895560404055823,1.0,False
+moirai-2-small,late,index,24,scored,climatology,1423,-6.742092340697936,-10.722777245549214,-2.761407435846658,1.0,False
+moirai-2-small,late,stock,1,scored,climatology,1242,-7.944041501705423,-8.922012380333214,-6.966070623077632,1.0,False
+moirai-2-small,late,stock,4,scored,climatology,1235,-2.7606646084459063,-3.610527128383942,-1.9108020885078705,1.0,False
+moirai-2-small,late,stock,24,"untested: 1176 decision times, fewer than 5 blocks of 292",garch-normal,1176,-3.679866112802999,,,,False
+kronos-small,late,commodity,1,scored,climatology,19,-24.1282067213932,-41.79123016893253,-6.465183273853871,1.0,False
+kronos-small,late,commodity,4,scored,climatology,19,-18.4912916776093,-29.04835244949881,-7.934230905719788,1.0,False
+kronos-small,late,commodity,24,scored,"climatology, linear",19,-49.42479079154018,-86.9932406082638,-11.85634097481656,1.0,False
+kronos-small,late,crypto,1,scored,climatology,19,-14.95971855425875,-33.59393384257233,3.674496734054834,1.0,False
+kronos-small,late,crypto,4,scored,climatology,19,-6.240367909969868,-19.494139215613966,7.013403395674231,1.0,False
+kronos-small,late,crypto,24,scored,climatology,19,-54.361092974652166,-88.14811208607479,-20.574073863229543,1.0,False
+kronos-small,late,forex,1,scored,linear,19,-15.831382239326452,-23.99294052417646,-7.66982395447644,1.0,False
+kronos-small,late,forex,4,scored,linear,19,-8.86278582789961,-16.18226407543876,-1.5433075803604632,1.0,False
+kronos-small,late,forex,24,scored,climatology,19,-62.53236713654018,-86.6061896594779,-38.458544613602456,1.0,False
+kronos-small,late,index,1,scored,climatology,19,-23.36194690512423,-47.09435136140227,0.3704575511538053,1.0,False
+kronos-small,late,index,4,scored,"climatology, linear",19,-23.032380280476893,-44.3929041526563,-1.671856408297483,1.0,False
+kronos-small,late,index,24,scored,climatology,19,-54.15408791864698,-100.2984787004025,-8.009697136891461,1.0,False
+kronos-small,late,stock,1,scored,climatology,19,-27.23706571009272,-36.10629591307536,-18.367835507110087,1.0,False
+kronos-small,late,stock,4,scored,climatology,19,-21.904556520878412,-28.153698140782936,-15.655414900973897,1.0,False
+kronos-small,late,stock,24,scored,garch-normal,17,-101.24420161388672,-117.50028851168022,-84.98811471609321,1.0,False
+kronos-base,late,commodity,1,scored,climatology,19,-25.523235480324736,-46.63323351022898,-4.413237450420489,1.0,False
+kronos-base,late,commodity,4,scored,climatology,19,-14.487597352630033,-24.953319191064946,-4.021875514195125,1.0,False
+kronos-base,late,commodity,24,"untested: 19 decision times, fewer than 5 blocks of 4","climatology, linear",19,-43.20728021770641,,,,False
+kronos-base,late,crypto,1,scored,climatology,19,-15.967362803580066,-32.18501733554172,0.2502917283815797,1.0,False
+kronos-base,late,crypto,4,scored,climatology,19,-13.93334800161643,-23.0195876381266,-4.84710836510626,1.0,False
+kronos-base,late,crypto,24,scored,climatology,19,-76.57672885046915,-124.59377710725984,-28.55968059367849,1.0,False
+kronos-base,late,forex,1,"untested: 19 decision times, fewer than 5 blocks of 7",linear,19,-17.587390109870405,,,,False
+kronos-base,late,forex,4,"untested: 19 decision times, fewer than 5 blocks of 4",linear,19,-8.669254364946099,,,,False
+kronos-base,late,forex,24,"untested: 19 decision times, fewer than 5 blocks of 5",climatology,19,-67.78827237476786,,,,False
+kronos-base,late,index,1,scored,climatology,19,-17.385844726233035,-35.538527316781654,0.7668378643155798,1.0,False
+kronos-base,late,index,4,"untested: 19 decision times, fewer than 5 blocks of 4","climatology, linear",19,-13.784828898069025,,,,False
+kronos-base,late,index,24,"untested: 19 decision times, fewer than 5 blocks of 4",climatology,19,-66.19160204012758,,,,False
+kronos-base,late,stock,1,scored,climatology,19,-30.73411551471972,-41.0444319190462,-20.42379911039324,1.0,False
+kronos-base,late,stock,4,scored,climatology,19,-19.46972473409334,-25.737066415141467,-13.202383053045214,1.0,False
+kronos-base,late,stock,24,scored,garch-normal,17,-67.04897475491826,-80.9717397257997,-53.12620978403683,1.0,False
